@@ -26,12 +26,12 @@
 
         base {
             bindings = <
-&none           &none    &none  &none           &none      &none             &none        &none            &none      &none    &none        &none
-&kp TAB         &kp Q    &kp D  &kp R           &kp W      &kp B             &kp J        &kp F            &kp U      &kp P    &kp SEMI     &kp BACKSLASH
-&kp LEFT_SHIFT  &kp A    &kp S  &kp H           &kp T      &kp G             &kp Y        &kp N            &kp E      &kp O    &kp I        &kp APOS
-&kp LCTRL       &lt 6 Z  &kp X  &kp M           &kp C      &kp V             &kp K        &kp L            &kp COMMA  &kp DOT  &lt 6 SLASH  &kp DELETE
-                                &kp LEFT_ARROW  &kp SPACE  &lt 5 LEFT_WIN    &lt 1 ENTER  &kp RIGHT_ARROW
-                                                &none      &none             &none
+&kp CAPSLOCK    &kp CAPS  &kp CAPS  &kp CAPS        &kp CAPS   &kp CAPS          &kp CAPS     &kp CAPS         &kp CAPS   &kp CAPS  &kp CAPS     &kp CAPS
+&kp TAB         &kp Q     &kp D     &kp R           &kp W      &kp B             &kp J        &kp F            &kp U      &kp P     &kp SEMI     &kp BACKSLASH
+&kp LEFT_SHIFT  &kp A     &kp S     &kp H           &kp T      &kp G             &kp Y        &kp N            &kp E      &kp O     &kp I        &kp APOS
+&kp LCTRL       &lt 6 Z   &kp X     &kp M           &kp C      &kp V             &kp K        &kp L            &kp COMMA  &kp DOT   &lt 6 SLASH  &kp DELETE
+                                    &kp LEFT_ARROW  &kp SPACE  &lt 5 LEFT_WIN    &lt 1 ENTER  &kp RIGHT_ARROW
+                                                    &kp CAPS   &kp CAPS          &kp CAPS
             >;
 
             trackball-bindings = <&tmv_coarse>;
