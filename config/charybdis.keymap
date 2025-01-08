@@ -29,8 +29,8 @@
 &none           &none    &none  &none           &none      &none             &none        &none            &none      &none    &none        &none
 &kp TAB         &kp Q    &kp D  &kp R           &kp W      &kp B             &kp J        &kp F            &kp U      &kp P    &kp SEMI     &kp BACKSLASH
 &kp LEFT_SHIFT  &kp A    &kp S  &kp H           &kp T      &kp G             &kp Y        &kp N            &kp E      &kp O    &kp I        &kp APOS
-&kp LCTRL       &lt 7 Z  &kp X  &kp M           &kp C      &kp V             &kp K        &kp L            &kp COMMA  &kp DOT  &lt 7 SLASH  &kp DELETE
-                                &kp LEFT_ARROW  &kp SPACE  &lt 6 LEFT_WIN    &lt 1 ENTER  &kp RIGHT_ARROW
+&kp LCTRL       &lt 6 Z  &kp X  &kp M           &kp C      &kp V             &kp K        &kp L            &kp COMMA  &kp DOT  &lt 6 SLASH  &kp DELETE
+                                &kp LEFT_ARROW  &kp SPACE  &lt 5 LEFT_WIN    &lt 1 ENTER  &kp RIGHT_ARROW
                                                 &none      &none             &none
             >;
 
@@ -64,12 +64,12 @@
 
         fkeysmedia {
             bindings = <
-&none      &none            &none         &none        &none         &none          &none      &none             &none              &none                 &none                  &none
-&kp TILDE  &kp EXCLAMATION  &kp AT_SIGN   &kp HASH     &kp DOLLAR    &kp PERCENT    &kp CARET  &kp AMPERSAND     &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans     &kp UNDERSCORE   &kp KP_MINUS  &kp KP_PLUS  &kp KP_EQUAL  &trans         &trans     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans
-&trans     &trans           &trans        &trans       &trans        &trans         &trans     &trans            &trans             &trans                &trans                 &trans
-                                          &trans       &trans        &trans         &trans     &trans
-                                                       &none         &none          &none
+&none   &none   &none   &none   &none   &none     &none   &none   &none   &none    &none    &none
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6    &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &trans   &trans
+                        &trans  &trans  &trans    &trans  &trans
+                                &none   &none     &none
             >;
 
             label = "fkeysmedia";
@@ -77,26 +77,15 @@
 
         navigation {
             bindings = <
-&none   &none   &none   &none   &none   &none     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
-                                &trans  &trans    &trans
+&none   &none   &none   &none   &none   &none     &none           &none           &none         &none            &none   &none
+&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans
+                        &trans  &trans  &trans    &trans          &trans
+                                &none   &none     &none
             >;
 
             label = "navigation";
-        };
-
-        layer_9 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
-                                &trans  &trans    &trans
-            >;
         };
 
         sample_nfs {
@@ -117,8 +106,8 @@
 &none        &none         &none         &none         &none      &none         &none       &none      &none         &none         &none         &none
 &none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none      &bt BT_CLR    &bt BT_CLR  &none      &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &none
 &none        &trans        &trans        &mkp MCLK     &trans     &none         &none       &trans     &mkp MCLK     &trans        &trans        &none
-&bootloader  &trans        &mkp RCLK     &mo 8         &mkp LCLK  &mo 9         &mo 9       &mkp LCLK  &mo 8         &mkp RCLK     &trans        &bootloader
-                                         &mo 9         &mkp LCLK  &mkp RCLK     &mkp RCLK   &mkp LCLK
+&bootloader  &trans        &mkp RCLK     &mo 7         &mkp LCLK  &mo 8         &mo 8       &mkp LCLK  &mo 7         &mkp RCLK     &trans        &bootloader
+                                         &mo 8         &mkp LCLK  &mkp RCLK     &mkp RCLK   &mkp LCLK
                                                        &none      &trans        &trans
             >;
         };
