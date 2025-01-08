@@ -11,27 +11,19 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        escc {
-            bindings = <&kp ESC>;
-            key-positions = <17 18>;
-            layers = <0>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
 
         base {
             bindings = <
-&kp CAPSLOCK    &kp CAPS  &kp CAPS  &kp CAPS        &kp CAPS   &kp CAPS          &kp CAPS     &kp CAPS         &kp CAPS   &kp CAPS  &kp CAPS     &kp CAPS
-&kp TAB         &kp Q     &kp D     &kp R           &kp W      &kp B             &kp J        &kp F            &kp U      &kp P     &kp SEMI     &kp BACKSLASH
-&kp LEFT_SHIFT  &kp A     &kp S     &kp H           &kp T      &kp G             &kp Y        &kp N            &kp E      &kp O     &kp I        &kp APOS
-&kp LCTRL       &lt 6 Z   &kp X     &kp M           &kp C      &kp V             &kp K        &kp L            &kp COMMA  &kp DOT   &lt 6 SLASH  &kp DELETE
-                                    &kp LEFT_ARROW  &kp SPACE  &lt 5 LEFT_WIN    &lt 1 ENTER  &kp RIGHT_ARROW
-                                                    &kp CAPS   &kp CAPS          &kp CAPS
+&kp CAPSLOCK  &kp CAPS  &kp CAPS  &kp CAPS        &kp CAPS     &kp CAPS     &kp CAPS     &kp CAPS         &kp CAPS   &kp CAPS  &kp CAPS     &kp CAPS
+&kp ESCAPE    &kp Q     &kp D     &kp R           &kp W        &kp B        &kp J        &kp F            &kp U      &kp P     &kp SEMI     &kp BACKSLASH
+&kp CAPSLOCK  &kp A     &kp S     &kp H           &kp T        &kp G        &kp Y        &kp N            &kp E      &kp O     &kp I        &kp APOS
+&tog 5        &lt 6 Z   &kp X     &kp M           &kp C        &kp V        &kp K        &kp L            &kp COMMA  &kp DOT   &lt 6 SLASH  &kp DELETE
+                                  &lt 2 LEFT_GUI  &lt 1 SPACE  &lt 4 TAB    &lt 3 ENTER  &lt 1 BACKSPACE
+                                                  &kp CAPS     &kp CAPS     &kp CAPS
             >;
 
             trackball-bindings = <&tmv_coarse>;
