@@ -26,12 +26,18 @@
 
         Base {
             bindings = <
-&kp ESC         &kp N1   &kp N2  &kp N3          &kp N4        &kp N5            &kp N6          &kp N7           &kp N8     &kp N9   &kp N0       &kp BSPC
+&none       &none       &none       &none       &none       &none           &none       &none       &none       &none       &none       &none
+&kp TAB         &kp Q       &kp D       &kp R       &kp W       &kp B       &kp J       &kp F       &kp U       &kp P       &kp SEMICOLON       &kp BACKSLASH
+&kp CAPSLOCK        &kp A       &kp S       &kp H       &kp T       &kp G       &kp Y       &kp N       &kp E       &kp O       &kp I       &kp APOSTROPHE
+&kp INSERT      &lt 3 Z     &kp X       &kp M       &kp C       &kp V       &kp K       &kp L       &kp COMMA       &kp PERIOD      &lt 3 SLASH     &kp DELETE
+/*
 &kp TAB         &kp Q    &kp W   &kp E           &kp R         &kp T             &kp Y           &kp U            &kp I      &kp O    &kp P        &kp BACKSLASH
 &kp LEFT_SHIFT  &kp A    &kp S   &kp D           &kp F         &kp G             &kp H           &kp J            &kp K      &kp L    &kp SEMI     &kp APOS
-&kp LCTRL       &lt 3 Z  &kp X   &kp C           &kp V         &kp B             &kp N           &kp M            &kp COMMA  &kp DOT  &lt 3 SLASH  &kp DELETE
+&kp LCTRL       &lt 3 Z  &kp X   &kp C           &kp V         &kp B             &kp N           &kp M            &kp COMMA  &kp DOT  &
                                  &kp LEFT_ARROW  &kp SPACE     &lt 1 TAB         &lt 2 ENTER     &kp BACKSPACE
-                                                 &kp LEFT_ALT  &kp SPACE         &kp DOWN_ARROW
+lt 3 SLASH  &kp DELETE
+*/
+&none       &none       &none
             >;
 
             trackball-bindings = <&tmv_coarse>;
