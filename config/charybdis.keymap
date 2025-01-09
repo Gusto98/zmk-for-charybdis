@@ -5,288 +5,386 @@
 
 
 &lt {
-	tapping-term-ms = <200>;
-	flavor = "balanced";
-	quick-tap-ms = <150>;
+   tapping-term-ms = <200>;
+   flavor = "balanced";
+   quick-tap-ms = <150>;
 };
 
 / {
-	combos {
-		compatible = "zmk,combos";
+   combos {
+      compatible = "zmk,combos";
 
-		escc {
-			bindings = <&kp ESC>;
-			key-positions = <17 18>;
-			layers = <0>;
-		};
-	};
+      escc {
+         bindings = <&kp ESC>;
+         key-positions = <17 18>;
+         layers = <0>;
+      };
+   };
 
-	keymap {
-		compatible = "zmk,keymap";
+   keymap {
+      compatible = "zmk,keymap";
 
-		/*
-		|------------------------------------------------------------------------------------------------------------------------------|
-		| BASE LAYER - WORKMAN - HOMEROW MODS GASC - LAYERTAP THUMB CLUSTER & LAYER TAP ROW 3                                          |
-		|--------|--------|--------|--------|--------|--------| ROW 0            |--------|--------|--------|--------|--------|--------|
-		| x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------|--------||--------|--------|--------|--------|--------|--------|--------|
-		| ROW 4                             |        |        |        ||        |        |	   /----------\   TRACKBALL PM3160         |
-		|                                   |        |        |        ||        |        |	  /            \                           |
-		| ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (              )                          |
-		|                                            | x      | x      || x      |            \            /                           |
-		|                                            |        |        ||        |             \          /                            |
-		|                                            |--------|--------||--------|              \--------/                             |
-		|------------------------------------------------------------------------------------------------------------------------------|
-		*/
-		Base {
-			bindings = <
-				&none		&none		&none		&none		&none		&none			&none		&none		&none		&none		&none		&none
-				&kp TAB	&kp Q		&kp D		&kp R		&kp W		&kp B			&kp J		&kp F		&kp U		&kp P		&kp SEMICOLON		&kp BACKSLASH
-				&kp CAPSLOCK		&kp A		&kp S		&kp H		&kp T			&kp G		&kp Y		&kp N		&kp E		&kp O		&kp I		&kp APOSTROPHE
-				&kp INSERT		&lt 3 Z		&kp X		&kp M		&kp C			&kp V		&kp K		&kp L		&kp COMMA		&kp PERIOD		&lt 3		&kp DELETE
-				/*
-				&kp TAB         &kp Q    &kp W   &kp E           &kp R         &kp T             &kp Y           &kp U            &kp I      &kp O    &kp P        &kp BACKSLASH
-				&kp LEFT_SHIFT  &kp A    &kp S   &kp D           &kp F         &kp G             &kp H           &kp J            &kp K      &kp L    &kp SEMI     &kp APOS
-				&kp LCTRL       &lt 3 Z  &kp X   &kp C           &kp V         &kp B             &kp N           &kp M            &kp COMMA  &kp DOT  &
-												&kp LEFT_ARROW  &kp SPACE     &lt 1 TAB         &lt 2 ENTER     &kp BACKSPACE
-				lt 3 SLASH  &kp DELETE
-				*/
-				&none       &none       &none
-			>;
+      /*
+      |------------------------------------------------------------------------------------------------------------------------------|
+      | BASE LAYER - WORKMAN - HOMEROW MODS GASC - LAYERTAP THUMB CLUSTER & LAYER TAP ROW 3                                          |
+      |-----------------------------------------------------| ROW 0            |-----------------------------------------------------|
+      | x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
+      |--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
+      | ESC    | Q      | D      | R      | W      | B      |                  | J      | F      | U      | P      | ;      | \ |    |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
+      | CAPS   | A      | S      | H      | T      | G      |                  | Y      | N      | E      | O      | I      | ' "    |
+      |        | LGUI   | LALT   | LSHFT  | LCTRL  |        |                  |        | RCTRL  | RSHFT  | RALT   | RGUI   |        |
+      |--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
+      |        | Z      | X      | M      | C      | V      |                  | K      | L      | , <    | . >    | / ?    | DELETE |
+      | TOG 5  |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |-----------------------------------|--------|--------|--------||--------|--------|--------------------------------------------|
+      | ROW 4                             | ESCAPE | SPACE  | TAB    || ENTER  | BCKSPC |    /-------\   TRACKBALL PM3610            |
+      |                                   |        |        |        ||        |        |	  / MOUSE   \                              |
+      | ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (  MOVEMENT )                             |
+      |                                            | x      | x      || x      |            \         /                              |
+      |                                            |-----------------||--------|             \-------/                               |
+      |------------------------------------------------------------------------------------------------------------------------------|
+      */
+      layer0 {
+         label = "workman";
+         bindings = <
+            &none		      &none		      &none		      &none		         &none		            &none		      &none		      &none		               &none		            &none		         &none		         &none
+            &kp ESCAPE	   &kp Q		      &kp D		      &kp R		         &kp W		            &kp B		      &kp J		      &kp F		               &kp U		            &kp P		         &kp SEMICOLON     &lt 9 BACKSLASH
+            &lt 2 CAPSLOCK	&mt LEFT_GUI A	&mt LEFT_ALT S &mt LEFT_SHIFT H  &mt LEFT_CONTROL T   &kp G		      &kp Y		      &mt RIGHT_CONTROL N     &mt RIGHT_SHIFT E    &mt RIGHT_ALT O   &mt RIGHT_GUI I   &kp APOSTROPHE
+            &tog 5		   &lt 2 Z		   &lt 2 X		   &lt 3 M		      &lt 4 C		         &lt 7 V			&lt 7 K		   &lt 4 L		            &lt 3 COMMA		      &lt 2 PERIOD      &lt 2 SLASH       &kp DELETE
+                                                         &lt 3 ESCAPE      &lt 2 SPACE          &lt 5 TAB      &lt 3 ENTER    &lt 2 BACKSPACE
+                                                                           &trans               &trans         &trans
+         >;
 
-			trackball-bindings = <&tmv_coarse>;
-		};
+         trackball-bindings = <&tmv_coarse>;
+      };
 
-		/*
-		|------------------------------------------------------------------------------------------------------------------------------|
-		| BASE LAYER overlay - QWERTY - HOMEROW MODS GASC - LAYERTAP THUMB CLUSTER & LAYER TAP ROW 3                                          |
-		|--------|--------|--------|--------|--------|--------| ROW 0            |--------|--------|--------|--------|--------|--------|
-		| x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------|--------||--------|--------|--------|--------|--------|--------|--------|
-		| ROW 4                             |        |        |        ||        |        |	   /----------\   TRACKBALL PM3160         |
-		|                                   |        |        |        ||        |        |	  /            \                           |
-		| ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (              )                          |
-		|                                            | x      | x      || x      |            \            /                           |
-		|                                            |        |        ||        |             \          /                            |
-		|                                            |--------|--------||--------|              \--------/                             |
-		|------------------------------------------------------------------------------------------------------------------------------|
-		*/
-		Base {
-			bindings = <
-				&none		&none		&none		&none		&none		&none			&none		&none		&none		&none		&none		&none
-				&kp TAB	&kp Q		&kp D		&kp R		&kp W		&kp B			&kp J		&kp F		&kp U		&kp P		&kp SEMICOLON		&kp BACKSLASH
-				&kp CAPSLOCK		&kp A		&kp S		&kp H		&kp T			&kp G		&kp Y		&kp N		&kp E		&kp O		&kp I		&kp APOSTROPHE
-				&kp INSERT		&lt 3 Z		&kp X		&kp M		&kp C			&kp V		&kp K		&kp L		&kp COMMA		&kp PERIOD		&lt 3		&kp DELETE
-				/*
-				&kp TAB         &kp Q    &kp W   &kp E           &kp R         &kp T             &kp Y           &kp U            &kp I      &kp O    &kp P        &kp BACKSLASH
-				&kp LEFT_SHIFT  &kp A    &kp S   &kp D           &kp F         &kp G             &kp H           &kp J            &kp K      &kp L    &kp SEMI     &kp APOS
-				&kp LCTRL       &lt 3 Z  &kp X   &kp C           &kp V         &kp B             &kp N           &kp M            &kp COMMA  &kp DOT  &
-												&kp LEFT_ARROW  &kp SPACE     &lt 1 TAB         &lt 2 ENTER     &kp BACKSPACE
-				lt 3 SLASH  &kp DELETE
-				*/
-				&none       &none       &none
-			>;
+      /*
+      |------------------------------------------------------------------------------------------------------------------------------|
+      | BASE LAYER overlay - QWERTY - HOMEROW MODS GASC - LAYERTAP THUMB CLUSTER & LAYER TAP ROW 3                                   |
+      |-----------------------------------------------------| ROW 0            |-----------------------------------------------------|
+      | x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
+      |--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
+      | ESC    | Q      | D      | R      | W      | B      |                  | J      | F      | U      | P      | ;      | \ |    |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
+      | CAPS   | A      | S      | H      | T      | G      |                  | Y      | N      | E      | O      | I      | ' "    |
+      |        | LGUI   | LALT   | LSHFT  | LCTRL  |        |                  |        | RCTRL  | RSHFT  | RALT   | RGUI   |        |
+      |--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
+      |        | Z      | X      | M      | C      | V      |                  | K      | L      | , <    | . >    | / ?    | DELETE |
+      | TOG 5  |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |-----------------------------------|--------|--------|--------||--------|--------|--------------------------------------------|
+      | ROW 4                             | LGUI   | SPACE  | TAB    || ENTER  | BCKSPC |    /-------\   TRACKBALL PM3610            |
+      |                                   |        |        |        ||        |        |	  / MOUSE   \                              |
+      | ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (  MOVEMENT )                             |
+      |                                            | x      | x      || x      |            \         /                              |
+      |                                            |-----------------||--------|             \-------/                               |
+      |------------------------------------------------------------------------------------------------------------------------------|
+      */
+      layer1 {
+         label = "qwerty overlay";
+         bindings = <
+            &none		      &none		      &none		      &none		         &none		            &none		      &none		      &none		               &none		            &none		         &none		                  &none
+            &kp ESCAPE	   &kp Q		      &kp W		      &kp E		         &kp R		            &kp T		      &kp Y		      &kp U		               &kp I		            &kp O		         &kp P                      &lt 9 BACKSLASH
+            &lt 2 CAPSLOCK	&mt LEFT_GUI A	&mt LEFT_ALT S &mt LEFT_SHIFT D  &mt LEFT_CONTROL F   &kp G		      &kp H		      &mt RIGHT_CONTROL J     &mt RIGHT_SHIFT K    &mt RIGHT_ALT L   &mt RIGHT_GUI SEMICOLON    &kp APOSTROPHE
+            &tog 5		   &lt 2 Z		   &lt 2 X		   &lt 3 C		      &lt 4 V		         &lt 7 B			&lt 7 N		   &lt 4 M		            &lt 3 COMMA		      &lt 2 PERIOD      &lt 2 SLASH                &kp DELETE
+                                                         &lt 3 ESCAPE      &lt 2 SPACE          &lt 5 TAB      &lt 5 ENTER    &lt 2 BACKSPACE
+                                                                           &trans               &trans         &trans
+         >;
 
-			trackball-bindings = <&tmv_coarse>;
-		};
+         trackball-bindings = <&tmv_coarse>;
+      };
 
-		/*
-		|------------------------------------------------------------------------------------------------------------------------------|
-		| LAYER 2 - Numbers                                                                                                            |
-		|--------|--------|--------|--------|--------|--------| ROW 0            |--------|--------|--------|--------|--------|--------|
-		| x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------|--------||--------|--------|--------|--------|--------|--------|--------|
-		| ROW 4                             |        |        |        ||        |        |	   /----------\   TRACKBALL PM3160         |
-		|                                   |        |        |        ||        |        |	  /            \                           |
-		| ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (              )                          |
-		|                                            | x      | x      || x      |            \            /                           |
-		|                                            |        |        ||        |             \          /                            |
-		|                                            |--------|--------||--------|              \--------/                             |
-		|------------------------------------------------------------------------------------------------------------------------------|
-		*/
-		layer_1 {
-			bindings = <
-&kp TILDE         &kp EXCLAMATION  &kp HASH      &kp DOLLAR    &kp DOLLAR    &kp PERCENT    &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE
+      /*
+      |------------------------------------------------------------------------------------------------------------------------------|
+      | LAYER 2 - Numbers                                                                                                            |
+      |-----------------------------------------------------| ROW 0            |-----------------------------------------------------|
+      | x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
+      |--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
+      | 0      | 1      | 2      | 3      | 4      | 5      |                  | 6      | 7      | 8      | 9      | 0      | =      |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
+      |        |        |        |        |        |        |                  | .      | 4      | 5      | 6      | -      | +      |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
+      |        |        |        |        |        |        |                  | 0      | 1      | 2      | 3      | /      | *      |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |-----------------------------------|--------|--------|--------||--------|--------|--------------------------------------------|
+      | ROW 4                             |        |        |        ||        |        |    /-------\   TRACKBALL PM3610            |
+      |                                   |        |        |        ||        |        |	  / MOUSE   \                              |
+      | ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (  MOVEMENT )                             |
+      |                                            | x      | x      || x      |            \         /                              |
+      |                                            |-----------------||--------|             \-------/                               |
+      |------------------------------------------------------------------------------------------------------------------------------|
+      */
+      layer2 {
+         label = "numbers";
+         bindings = <
+            &none		         &none		        &none		       &none		      &none		        &none		         &none		        &none		       &none		      &none		        &none		       &none
+            &kp KP_NUMBER_0   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_NUMBER_4  &kp KP_NUMBER_5    &kp KP_NUMBER_6  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMBER_0  &kp KP_EQUAL
+            &trans            &trans           &trans           &trans           &trans           &trans             &kp KP_DOT       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS     &kp KP_PLUS
+            &trans            &trans           &trans           &trans           &trans           &trans             &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_DIVIDE    &kp KP_MULTIPLY
+                                                                &trans           &trans           &trans             &trans           &trans
+                                                                                 &none            &none              &none
+         >;
+
+         trackball-bindings = <&tmv_coarse>;
+      };
+
+      /*
+      samplelayer2 {
+         label = "numbers";
+         bindings = <
+&kp TILDE         &kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR    &kp PERCENT    &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE
 &kp GRAVE         &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp LBKT       &kp RBKT   &kp F1         &kp F2        &kp F3                &kp F4                 &kp DEL
 &kp LEFT_CONTROL  &kp NUMBER_5     &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &none          &kp BSLH   &kp F5         &kp F6        &kp F7                &kp F8                 &kp PAGE_UP
 &kp LSHFT         &kp NUMBER_9     &kp NUMBER_0  &kp MINUS     &kp EQUAL     &none          &trans     &kp F9         &kp F10       &kp F11               &kp F12                &kp PAGE_DOWN
-												 &kp LEFT_WIN  &kp SPACE     &trans         &kp ENTER  &kp BACKSPACE
-																&none         &none          &trans
-			>;
-		};
+                                     &kp LEFT_WIN  &kp SPACE     &trans         &kp ENTER  &kp BACKSPACE
+                                                &none         &none          &trans
+         >;
+      };
+      */
+      /*
+      |------------------------------------------------------------------------------------------------------------------------------|
+      | LAYER 3 - Symbols                                                                                                            |
+      |-----------------------------------------------------| ROW 0            |-----------------------------------------------------|
+      | x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
+      |--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
+      | `      | !      | @      | #      | $      | %      |                  | ^      | &      | *      | (      | )      | |      |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
+      | ~      | _      | -      | +      | =      |        |                  |        | [      | ]      | {      | }      | "      |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
+      |        |        |        |        |        |        |                  |        | '      | "      | <      | >      | ?      |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |-----------------------------------|--------|--------|--------||--------|--------|--------------------------------------------|
+      | ROW 4                             |        |        |        ||        |        |    /-------\   TRACKBALL PM3610            |
+      |                                   |        |        |        ||        |        |	  / MOUSE   \                              |
+      | ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (  MOVEMENT )                             |
+      |                                            | x      | x      || x      |            \         /                              |
+      |                                            |-----------------||--------|             \-------/                               |
+      |------------------------------------------------------------------------------------------------------------------------------|
+      */
+      layer3 {
+         label = "symbols";
+         bindings = <
+            &none		  &none		      &none		     &none		&none		     &none		   &none		  &none		        &none		         &none		            &none		             &none
+            &kp GRAVE  &kp EXCLAMATION &kp AT_SIGN   &kp HASH  &kp DOLLAR    &kp PERCENT  &kp CARET  &kp AMPERSAND     &kp ASTERISK       &kp LEFT_PARENTHESIS &kp RIGHT_PARANTHESIS &kp PIPE
+            &kp TILDE  &kp UNDERSCORE  &kp KP_MINUS  &kp PLUS  &kp KP_EQUAL  &trans       &trans     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp DOUBLE_QUOTES
+            &trans     &trans          &trans        &trans    &trans        &trans       &trans     &kp APOSTROPHE    &kp DOUBLE_QUOTES  &kp LESS_THAN        &kp GREATER_THAN      &kp QUESTION
+                                                     &trans    &trans        &trans       &trans     &trans
+                                                               &none         &none        &none
+         >;
+      };
 
-		/*
-		|------------------------------------------------------------------------------------------------------------------------------|
-		| LAYER 3 - Symbols                                                                                                            |
-		|--------|--------|--------|--------|--------|--------| ROW 0            |--------|--------|--------|--------|--------|--------|
-		| x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------|--------||--------|--------|--------|--------|--------|--------|--------|
-		| ROW 4                             |        |        |        ||        |        |	   /----------\   TRACKBALL PM3160         |
-		|                                   |        |        |        ||        |        |	  /            \                           |
-		| ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (              )                          |
-		|                                            | x      | x      || x      |            \            /                           |
-		|                                            |        |        ||        |             \          /                            |
-		|                                            |--------|--------||--------|              \--------/                             |
-		|------------------------------------------------------------------------------------------------------------------------------|
-		*/
-		layer_2 {
-			bindings = <
-&kp F12           &kp F1      &kp F2      &kp F3         &kp F4         &kp F5          &kp F6        &kp F7         &kp F8    &kp F9     &kp F10  &kp F11
-&kp LS(GRAVE)     &kp LS(N1)  &kp LS(N2)  &kp LS(N3)     &kp LS(N4)     &kp LS(LBKT)    &kp LS(RBKT)  &none          &trans    &none      &none    &trans
-&kp LEFT_CONTROL  &kp LS(N5)  &kp LS(N6)  &kp LS(N7)     &kp LS(N8)     &none           &kp LS(BSLH)  &trans         &kp UP    &trans     &trans   &trans
-&kp LEFT_SHIFT    &kp LS(N9)  &kp LS(N0)  &kp LS(MINUS)  &kp LS(EQUAL)  &none           &none         &kp LEFT       &kp DOWN  &kp RIGHT  &none    &trans
-										  &kp LEFT_ALT   &kp SPACE      &kp ENTER       &trans        &kp BACKSPACE
-														 &trans         &trans          &none
-			>;
-		};
+      /*
+      |------------------------------------------------------------------------------------------------------------------------------|
+      | LAYER 4 - Function & Media Keys                                                                                              |
+      |-----------------------------------------------------| ROW 0            |-----------------------------------------------------|
+      | x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
+      |--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
+      | F1     | F2     | F3     | F4     | F5     | F6     |                  | F7     | F8     | F9     | F10    | F11    | F12    |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
+      | BRI UP | PREV   | PLAY/  | MUTE   | NEXT   | VOL UP |                  | BRI UP |        |        |        |        |        |
+      |        |        | PAUSE  |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
+      | BRI UP | MAC    | MAC    | MAC    | MAC    | VOL DN |                  | BRI DN |        |        |        | COMP   | CALC   |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |-----------------------------------|--------|--------|--------||--------|--------|--------------------------------------------|
+      | ROW 4                             |        |        |        ||        |        |    /-------\   TRACKBALL PM3610            |
+      |                                   |        |        |        ||        |        |	  / MOUSE   \                              |
+      | ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (  MOVEMENT )                             |
+      |                                            | x      | x      || x      |            \         /                              |
+      |                                            |-----------------||--------|             \-------/                               |
+      |------------------------------------------------------------------------------------------------------------------------------|
+      */
+      layer4 {
+         label = "function and media keys";
+         bindings = <
+            &none                 &none            &none             &none       &none       &none                &none    &none    &none    &none       &none                   &none
+            &kp F1                &kp F2           &kp F3            &kp F4      &kp F5      &kp F6               &kp F7   &kp F8   &kp F9   &kp F10     &kp F11                 &kp F12
+            &kp C_BRIGHTNESS_INC  &kp C_PREVIOUS   &kp C_PLAY_PAUSE  &kp K_MUTE  &kp C_NEXT  &kp C_VOLUME_UP      &trans   &trans   &trans   &trans      &trans                  &trans
+            &kp C_BRIGHTNESS_DEC  &kp K_PREVIOUS   &kp K_PLAY_PAUSE  &kp K_STOP  &kp K_NEXT  &kp C_VOLUME_DOWN    &trans   &trans   &trans   &trans      &kp C_MEDIA_COMPUTER    &kp K_CALCULATOR
+                                                                     &trans      &trans      &trans               &trans   &trans
+                                                                                 &none       &none                &none
+         >;
+      };
 
-		/*
-		|------------------------------------------------------------------------------------------------------------------------------|
-		| LAYER 4 - Function Keys & Media                                                                                              |
-		|--------|--------|--------|--------|--------|--------| ROW 0            |--------|--------|--------|--------|--------|--------|
-		| x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------|--------||--------|--------|--------|--------|--------|--------|--------|
-		| ROW 4                             |        |        |        ||        |        |	   /----------\   TRACKBALL PM3160         |
-		|                                   |        |        |        ||        |        |	  /            \                           |
-		| ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (              )                          |
-		|                                            | x      | x      || x      |            \            /                           |
-		|                                            |        |        ||        |             \          /                            |
-		|                                            |--------|--------||--------|              \--------/                             |
-		|------------------------------------------------------------------------------------------------------------------------------|
-		*/
-		Mouse {
-			bindings = <
-&none        &none         &none         &none         &none      &none         &none       &none      &none         &none         &none         &none
-&none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none      &bt BT_CLR    &bt BT_CLR  &none      &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &none
-&none        &trans        &trans        &mkp MCLK     &trans     &none         &none       &trans     &mkp MCLK     &trans        &trans        &none
-&bootloader  &trans        &mkp RCLK     &mo 4         &mkp LCLK  &mo 5         &mo 5       &mkp LCLK  &mo 4         &mkp RCLK     &trans        &bootloader
-										 &mo 5         &mkp LCLK  &mkp RCLK     &mkp RCLK   &mkp LCLK
-														&none      &trans        &trans
-			>;
-		};
+      /*
+      |------------------------------------------------------------------------------------------------------------------------------|
+      | LAYER 5 - BLUETOOTH settings                                                                                                 |
+      |-----------------------------------------------------| ROW 0            |-----------------------------------------------------|
+      | x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
+      |--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
+      | F1     | F2     | F3     | F4     | F5     | F6     |                  | F7     | F8     | F9     | F10    | F11    | F12    |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
+      | BRI UP | PREV   | PLAY/  | MUTE   | NEXT   | VOL UP |                  | BRI UP |        |        |        |        |        |
+      |        |        | PAUSE  |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
+      | BRI UP | MAC    | MAC    | MAC    | MAC    | VOL DN |                  | BRI DN |        |        |        | COMP   | CALC   |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |-----------------------------------|--------|--------|--------||--------|--------|--------------------------------------------|
+      | ROW 4                             |        |        |        ||        |        |	   /--------\   TRACKBALL PM3610           |
+      |                                   |        |        |        ||        |        |	  /          \                             |
+      | ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (            )                            |
+      |                                            | x      | x      || x      |            \          /                             |
+      |                                            |--------|--------||--------|             \--------/                              |
+      |------------------------------------------------------------------------------------------------------------------------------|
+      */
+      layer5 {
+         label="bluetooth settings";
+         bindings = <
+            &none          &none          &none          &none          &none          &none             &none           &none          &none          &none          &none          &none
+            &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &bt BT_NXT        &bt BT_NXT      &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4
+            &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &bt BT_PRV        &bt BT_PRV      &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4
+            &none          &none          &none          &none          &bt BT_CLR     &bt BT_CLR_ALL    &bt BT_CLR_ALL  &bt BT_CLR     &none          &none          &none          &none
+                                                         &none          &none          &none             &none           &none
+                                                                        &none          &none             &none
+         >;
+      };
 
-		/*
-		|------------------------------------------------------------------------------------------------------------------------------|
-		| LAYER 5 - Navigation - Arrow keys, HOME END PG UP PG DN INS DELETE                                                           |
-		|--------|--------|--------|--------|--------|--------| ROW 0            |--------|--------|--------|--------|--------|--------|
-		| x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------|--------||--------|--------|--------|--------|--------|--------|--------|
-		| ROW 4                             |        |        |        ||        |        |	   /----------\   TRACKBALL PM3160         |
-		|                                   |        |        |        ||        |        |	  /            \                           |
-		| ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (              )                          |
-		|                                            | x      | x      || x      |            \            /                           |
-		|                                            |        |        ||        |             \          /                            |
-		|                                            |--------|--------||--------|              \--------/                             |
-		|------------------------------------------------------------------------------------------------------------------------------|
-		*/
-		layer_4 {
-			bindings = <
-&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans     &mkp MCLK  &trans     &trans       &trans     &trans     &mkp MCLK  &trans     &trans  &trans
-&trans  &trans  &mkp RCLK  &trans     &mkp LCLK  &trans       &trans     &mkp LCLK  &trans     &mkp RCLK  &trans  &trans
-							&trans     &mkp LCLK  &mkp RCLK    &mkp RCLK  &mkp LCLK
-									  &trans     &trans       &trans
-			>;
+      /*
+      |------------------------------------------------------------------------------------------------------------------------------|
+      | LAYER 6 - Navigation - Arrow keys, HOME END PG UP PG DN INS DELETE                                                           |
+      |-----------------------------------------------------| ROW 0            |-----------------------------------------------------|
+      | x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
+      |--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |-----------------------------------|--------|--------|--------||--------|--------|--------------------------------------------|
+      | ROW 4                             |        |        |        ||        |        |	   /--------\   TRACKBALL PM3610           |
+      |                                   |        |        |        ||        |        |	  /          \                             |
+      | ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (            )                            |
+      |                                            | x      | x      || x      |            \          /                             |
+      |                                            |--------|--------||--------|             \--------/                              |
+      |------------------------------------------------------------------------------------------------------------------------------|
+      */
+      layer6 {
+         label = "navigation";
+         bindings = <
+            &trans  &trans  &trans           &trans          &trans           &trans            &trans          &trans          &trans        &trans           &trans      &trans
+            &trans  &trans  &trans           &trans          &trans           &trans            &trans          &trans          &trans        &trans           &trans      &trans
+            &trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_UP    &mmv MOVE_RIGHT  &msc SCRL_UP      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans      &trans
+            &tog 5  &mo 6   &msc SCRL_LEFT   &mmv MOVE_DOWN  &msc SCRL_RIGHT  &msc SCRL_DOWN    &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp INSERT  &kp DELETE
+                                             &mkp MB1        &mkp MB3         &mkp MB2          &trans          &trans
+                                                             &trans           &trans            &trans
+         >;
 
-			trackball-bindings = <&tsl>;//滚轮层
-		};
+         trackball-bindings = <&tsl>;//滚轮层
+      };
 
-		/*
-		|------------------------------------------------------------------------------------------------------------------------------|
-		| LAYER 6 - Mouse - Mouse Button Scroll Movement                                                                               |
-		|--------|--------|--------|--------|--------|--------| ROW 0            |--------|--------|--------|--------|--------|--------|
-		| x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------|--------||--------|--------|--------|--------|--------|--------|--------|
-		| ROW 4                             |        |        |        ||        |        |	   /----------\   TRACKBALL PM3160         |
-		|                                   |        |        |        ||        |        |	  /            \                           |
-		| ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (              )                          |
-		|                                            | x      | x      || x      |            \            /                           |
-		|                                            |        |        ||        |             \          /                            |
-		|                                            |--------|--------||--------|              \--------/                             |
-		|------------------------------------------------------------------------------------------------------------------------------|
-		*/
-		layer_5 {
-			bindings = <
-&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans     &mkp MCLK  &trans     &trans       &trans     &trans     &mkp MCLK  &trans     &trans  &trans
-&trans  &trans  &mkp RCLK  &trans     &mkp LCLK  &trans       &trans     &mkp LCLK  &trans     &mkp RCLK  &trans  &trans
-							&trans     &mkp LCLK  &mkp RCLK    &mkp RCLK  &mkp LCLK
-									  &trans     &trans       &trans
-			>;
+      /*
+      |------------------------------------------------------------------------------------------------------------------------------|
+      | LAYER 7 - Mouse - Mouse Button Scroll Movement                                                                               |
+      |-----------------------------------------------------| ROW 0            |-----------------------------------------------------|
+      | x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
+      |--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |-----------------------------------|--------|--------|--------||--------|--------|--------------------------------------------|
+      | ROW 4                             |        |        |        ||        |        |	   /--------\   TRACKBALL PM3610           |
+      |                                   |        |        |        ||        |        |	  /          \                             |
+      | ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (            )                            |
+      |                                            | x      | x      || x      |            \          /                             |
+      |                                            |--------|--------||--------|             \--------/                              |
+      |------------------------------------------------------------------------------------------------------------------------------|
+      */
+      layer7 {
+         label = "mouse";
+         bindings = <
+            &trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
+            &trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
+            &trans  &trans  &trans     &mkp MCLK  &trans     &trans       &trans     &trans     &mkp MCLK  &trans     &trans  &trans
+            &trans  &trans  &mkp RCLK  &trans     &mkp LCLK  &trans       &trans     &mkp LCLK  &trans     &mkp RCLK  &trans  &trans
+                                       &trans     &mkp LCLK  &mkp RCLK    &mkp RCLK  &mkp LCLK
+                                                  &trans     &trans       &trans
+         >;
 
-			trackball-bindings = <&tmv_fine>;//精准指针层
-		};
-	};
+         trackball-bindings = <&tmv_fine>;//精准指针层
+      };
+
+      /*
+      |------------------------------------------------------------------------------------------------------------------------------|
+      | LAYER 8 - Settings - Reste KB & toggle base overlay                                                                          |
+      |-----------------------------------------------------| ROW 0            |-----------------------------------------------------|
+      | x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
+      |--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |-----------------------------------|--------|--------|--------||--------|--------|--------------------------------------------|
+      | ROW 4                             |        |        |        ||        |        |	   /--------\   TRACKBALL PM3610           |
+      |                                   |        |        |        ||        |        |	  /          \                             |
+      | ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (            )                            |
+      |                                            | x      | x      || x      |            \          /                             |
+      |                                            |--------|--------||--------|             \--------/                              |
+      |------------------------------------------------------------------------------------------------------------------------------|
+      */
+      layer8 {
+         label = "settings";
+         bindings = <
+            &none  &none  &none  &none  &none  &none    &none  &none       &none        &none  &none  &none
+            &none  &to 1  &to 0  &none  &none  &none    &none  &none       &none        &none  &none  &none
+            &none  &none  &none  &none  &none  &none    &none  &sys_reset  &bootloader  &none  &none  &none
+            &none  &none  &none  &none  &none  &none    &none  &none       &none        &none  &none  &none
+                              &none  &none  &none    &none  &none
+                                       &none  &none    &none
+         >;
+      };
+
+      /*
+      |------------------------------------------------------------------------------------------------------------------------------|
+      | LAYER 9 - Swap layer                                                                                                         |
+      |-----------------------------------------------------| ROW 0            |-----------------------------------------------------|
+      | x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
+      |--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |        |        |        |        |        |        |                  |        |        |        |        |        |        |
+      |-----------------------------------|--------|--------|--------||--------|--------|--------------------------------------------|
+      | ROW 4                             |        |        |        ||        |        |	   /--------\   TRACKBALL PM3610           |
+      |                                   |        |        |        ||        |        |	  /          \                             |
+      | ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (            )                            |
+      |                                            | x      | x      || x      |            \          /                             |
+      |                                            |--------|--------||--------|             \--------/                              |
+      |------------------------------------------------------------------------------------------------------------------------------|
+      */
+      layer9 {
+         label = "swap";
+         bindings = <
+            &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+            &none  &none  &none  &none  &none  &none    &none  &none  &none  &mo 7  &mo 8  &none
+            &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+            &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+                                 &none  &none  &none    &none  &none
+                                        &none  &none    &none
+         >;
+      };
+   };
 };
