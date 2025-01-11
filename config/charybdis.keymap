@@ -171,7 +171,7 @@
          label = "symbols";
          bindings = <
             &none		  &none		      &none		     &none		&none		     &none		   &none		  &none		        &none		         &none		            &none		             &none
-            &kp GRAVE  &kp EXCLAMATION &kp AT_SIGN   &kp HASH  &kp DOLLAR    &kp PERCENT  &kp CARET  &kp AMPERSAND     &kp ASTERISK       &kp LEFT_PARENTHESIS &kp RIGHT_PARANTHESIS &kp PIPE
+            &kp GRAVE  &kp EXCLAMATION &kp AT_SIGN   &kp HASH  &kp DOLLAR    &kp PERCENT  &kp CARET  &kp AMPERSAND     &kp ASTERISK       &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PIPE
             &kp TILDE  &kp UNDERSCORE  &kp KP_MINUS  &kp PLUS  &kp KP_EQUAL  &trans       &trans     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp DOUBLE_QUOTES
             &trans     &trans          &trans        &trans    &trans        &trans       &trans     &kp APOSTROPHE    &kp DOUBLE_QUOTES  &kp LESS_THAN        &kp GREATER_THAN      &kp QUESTION
                                                      &trans    &trans        &trans       &trans     &trans
@@ -348,8 +348,8 @@
             &none  &to 1  &to 0  &none  &none  &none    &none  &none       &none        &none  &none  &none
             &none  &none  &none  &none  &none  &none    &none  &sys_reset  &bootloader  &none  &none  &none
             &none  &none  &none  &none  &none  &none    &none  &none       &none        &none  &none  &none
-                              &none  &none  &none    &none  &none
-                                       &none  &none    &none
+                                 &none  &none  &none    &none  &none
+                                        &none  &none    &none
          >;
       };
 
