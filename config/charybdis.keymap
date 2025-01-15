@@ -30,16 +30,16 @@
 		| x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
 		|--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
 		| ESC    | Q      | D      | R      | W      | B      |                  | J      | F      | U      | P      | ;      | \ |    |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
+		|        |        |        |        |        |        |                  |        |        |        |        |        | LT 9   |
 		|--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
 		| CAPS   | A      | S      | H      | T      | G      |                  | Y      | N      | E      | O      | I      | ' "    |
 		|        | LGUI   | LALT   | LSHFT  | LCTRL  |        |                  |        | RCTRL  | RSHFT  | RALT   | RGUI   |        |
 		|--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
 		|        | Z      | X      | M      | C      | V      |                  | K      | L      | , <    | . >    | / ?    | DELETE |
-		| TOG 5  |        |        |        |        |        |                  |        |        |        |        |        |        |
+		| TOG 5  | LT 2   | LT 2   | LT 3   | LT 4   | LT 7   |                  | LT 7   | LT 4   | LT 3   | LT 2   | LT 2   | LT 5   |
 		|-----------------------------------|--------|--------|--------||--------|--------|--------------------------------------------|
 		| ROW 4                             | ESCAPE | SPACE  | TAB    || ENTER  | BCKSPC |    /-------\   TRACKBALL PM3610            |
-		|                                   |        |        |        ||        |        |	  / MOUSE   \                              |
+		|                                   | LT 3   | LT 2   | LT 5   || LT 3   | LT 2   |	  / MOUSE   \                              |
 		| ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (  MOVEMENT )                             |
 		|                                            | x      | x      || x      |            \         /                              |
 		|                                            |-----------------||--------|             \-------/                               |
@@ -48,9 +48,9 @@
 		Base {
 			bindings = <
 				&none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none
-				&kp ESCAPE	&kp Q	&kp D	&kp R	&kp W	&kp B	&kp J	&kp F	&kp U	&kp P	&kp SEMICOLON	&kp BACKSLASH
+				&kp ESCAPE	&kp Q	&kp D	&kp R	&kp W	&kp B	&kp J	&kp F	&kp U	&kp P	&kp SEMICOLON	&lt 1 BACKSLASH
 				&kp CAPSLOCK	&mt LEFT_GUI A	&mt LEFT_ALT S	&mt LEFT_SHIFT H	&mt LEFT_CONTROL T	&kp G	&kp Y	&mt RIGHT_CONTROL N	&mt RIGHT_SHIFT E	&mt RIGHT_ALT O	&mt RIGHT_GUI I	&kp APOSTROPHE
-				&tog 5	&lt 2 Z	&lt 2 X	&lt 3 M	&lt 4 C	&lt 7 V	&lt 7 K	&lt 4 L	&lt 3 COMMA	&lt 2 PERIOD	&lt 2 SLASH	&lt 5 DELETE
+				&tog 5	&lt 2 Z	&lt 2 X	&lt 3 M	&lt 4 C	&lt 1 V	&lt 1 K	&lt 4 L	&lt 3 COMMA	&lt 2 PERIOD	&lt 2 SLASH	&lt 5 DELETE
 				&lt 3 ESCAPE	&lt 2 SPACE	&lt 5 TAB	&lt 3 ENTER	&lt 2 BACKSPACE
 				&none	&none	&none
 			>;
