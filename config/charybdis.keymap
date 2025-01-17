@@ -220,6 +220,8 @@
 		|------------------------------------------------------------------------------------------------------------------------------|
 		*/
 
+      /*
+      // this layer broke the build
       bluetooth {
          label = "bluetooth settings";
          bindings = <
@@ -231,6 +233,7 @@
                                                                         &none          &none             &none
          >;
       };
+      */
 
 		/*
 		|------------------------------------------------------------------------------------------------------------------------------|
@@ -254,6 +257,20 @@
 		|                                            |--------|--------||--------|             \--------/                              |
 		|------------------------------------------------------------------------------------------------------------------------------|
 		*/
+
+      nav {
+         label = "navigation";
+         bindings = <
+            &trans  &trans  &trans           &trans          &trans           &trans            &trans          &trans          &trans        &trans           &trans      &trans
+            &trans  &trans  &trans           &trans          &trans           &trans            &trans          &trans          &trans        &trans           &trans      &trans
+            &trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_UP    &mmv MOVE_RIGHT  &msc SCRL_UP      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans      &trans
+            &tog 5  &mo 6   &msc SCRL_LEFT   &mmv MOVE_DOWN  &msc SCRL_RIGHT  &msc SCRL_DOWN    &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp INSERT  &kp DELETE
+                                             &mkp MB1        &mkp MB3         &mkp MB2          &trans          &trans
+                                                             &trans           &trans            &trans
+         >;
+
+         trackball-bindings = <&tsl>;//滚轮层
+      };
 
 		/*
 		|------------------------------------------------------------------------------------------------------------------------------|
