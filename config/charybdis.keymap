@@ -24,7 +24,7 @@
 		compatible = "zmk,keymap";
 		/*
 		|------------------------------------------------------------------------------------------------------------------------------|
-		| BASE LAYER - WORKMAN - HOMEROW MODS GASC - LAYERTAP THUMB CLUSTER & LAYER TAP ROW 3                                          |
+		| LAYER 0 - BASE LAYER - WORKMAN - HOMEROW MODS GASC - LAYERTAP THUMB CLUSTER & LAYER TAP ROW 3                                |
 		|-----------------------------------------------------| ROW 0            |-----------------------------------------------------|
 		| x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
 		|--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
@@ -59,7 +59,7 @@
 
 		/*
 		|------------------------------------------------------------------------------------------------------------------------------|
-		| BASE LAYER overlay - QWERTY - HOMEROW MODS GASC - LAYERTAP THUMB CLUSTER & LAYER TAP ROW 3                                   |
+		| LAYER 1 - BASE LAYER overlay - QWERTY - HOMEROW MODS GASC - LAYERTAP THUMB CLUSTER & LAYER TAP ROW 3                         |
 		|-----------------------------------------------------| ROW 0            |-----------------------------------------------------|
 		| x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
 		|--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
@@ -184,6 +184,18 @@
 		|                                            |-----------------||--------|             \-------/                               |
 		|------------------------------------------------------------------------------------------------------------------------------|
 		*/
+
+      fkeysmedia {
+         label = "function and media keys";
+         bindings = <
+            &none                 &none            &none             &none       &none       &none                &none    &none    &none    &none       &none                   &none
+            &kp F1                &kp F2           &kp F3            &kp F4      &kp F5      &kp F6               &kp F7   &kp F8   &kp F9   &kp F10     &kp F11                 &kp F12
+            &kp C_BRIGHTNESS_INC  &kp C_PREVIOUS   &kp C_PLAY_PAUSE  &kp K_MUTE  &kp C_NEXT  &kp C_VOLUME_UP      &trans   &trans   &trans   &trans      &trans                  &trans
+            &kp C_BRIGHTNESS_DEC  &kp K_PREVIOUS   &kp K_PLAY_PAUSE  &kp K_STOP  &kp K_NEXT  &kp C_VOLUME_DOWN    &trans   &trans   &trans   &trans      &kp C_MEDIA_COMPUTER    &kp K_CALCULATOR
+                                                                     &trans      &trans      &trans               &trans   &trans
+                                                                                 &none       &none                &none
+         >;
+      };
 
 		/*
 		|------------------------------------------------------------------------------------------------------------------------------|
