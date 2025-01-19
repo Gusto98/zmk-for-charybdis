@@ -223,7 +223,7 @@
 			bindings = <
             &none        &none         &none         &none         &none      &none             &none             &none      &none         &none         &none         &none
             &none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none      &bt BT_CLR        &bt BT_CLR        &none      &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &none
-            &none        &none         &none         &mkp MCLK     &none      &bt BT_NXT        &bt BT_BT_NXT     &none      &mkp MCLK     &none         &none         &none
+            &none        &none         &none         &mkp MCLK     &bt BT_PRV &bt BT_NXT        &bt BT_NXT        &bt BT_PRV &mkp MCLK     &none         &none         &none
             &bootloader  &none         &mkp RCLK     &mo 4         &mkp LCLK  &mo 5             &mo 5             &mkp LCLK  &mo 4         &mkp RCLK     &none         &bootloader
 										                       &mo 5         &mkp LCLK  &mkp RCLK         &mkp RCLK         &mkp LCLK
 														                         &none      &none             &none
