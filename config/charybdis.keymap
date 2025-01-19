@@ -222,10 +222,10 @@
       btsettings {
 			bindings = <
             &none        &none         &none         &none         &none      &none             &none             &none      &none         &none         &none         &none
-            &none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none      &bt BT_CLR        &bt BT_CLR        &none      &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &none
-            &none        &none         &none         &mkp MCLK     &bt BT_PRV &bt BT_NXT        &bt BT_NXT        &bt BT_PRV &mkp MCLK     &none         &none         &none
+            &bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none      &bt BT_CLR        &bt BT_CLR        &none      &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bootloader
+            &none        &bootloader   &none         &mkp MCLK     &bt BT_PRV &bt BT_NXT        &bt BT_NXT        &bt BT_PRV &mkp MCLK     &none         &bootloader   &none
             &bootloader  &none         &mkp RCLK     &mo 4         &mkp LCLK  &mo 5             &mo 5             &mkp LCLK  &mo 4         &mkp RCLK     &none         &bootloader
-										                       &mo 5         &mkp LCLK  &mkp RCLK         &mkp RCLK         &mkp LCLK
+										                       &mkp LCLK     &mkp MCLK  &mkp RCLK         &mkp RCLK         &mkp LCLK
 														                         &none      &none             &none
 			>;
 		};
@@ -273,7 +273,7 @@
             &none   &none   &none            &none           &none            &none             &none           &none           &none         &none            &none       &none
             &trans  &trans  &trans           &trans          &trans           &trans            &trans          &trans          &trans        &trans           &trans      &trans
             &trans  &trans  &trans           &trans          &trans           &msc SCRL_UP      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans      &trans
-            &tog 5  &mo 6   &msc SCRL_LEFT   &trans          &msc SCRL_RIGHT  &msc SCRL_DOWN    &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp INSERT  &kp DELETE
+            &tog 6  &mo 5   &msc SCRL_LEFT   &trans          &msc SCRL_RIGHT  &msc SCRL_DOWN    &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp INSERT  &kp DELETE
                                              &mkp MB1        &mkp MB3         &mkp MB2          &trans          &trans
                                                              &none            &none             &none
          >;
