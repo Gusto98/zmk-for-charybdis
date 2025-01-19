@@ -35,7 +35,7 @@
 		|        | LGUI   | LALT   | LSHFT  | LCTRL  |        |                  |        | RCTRL  | RSHFT  | RALT   | RGUI   |        |
 		|--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
 		|        | Z      | X      | M      | C      | V      |                  | K      | L      | , <    | . >    | / ?    | DELETE |
-		| TOG 5  | LT 2   | LT 2   | LT 3   | LT 4   | LT 7   |                  | LT 7   | LT 4   | LT 3   | LT 2   | LT 2   | LT 5   |
+		| TOG 5  | LT 6   | LT 2   | LT 3   | LT 4   | LT 7   |                  | LT 7   | LT 4   | LT 3   | LT 2   | LT 6   | LT 5   |
 		|-----------------------------------|--------|--------|--------||--------|--------|--------------------------------------------|
 		| ROW 4                             | ESCAPE | SPACE  | TAB    || ENTER  | BCKSPC |    /-------\   TRACKBALL PM3610            |
 		|                                   | LT 3   | LT 2   | LT 5   || LT 3   | LT 2   |	  / MOUSE   \                              |
@@ -49,8 +49,8 @@
 				&none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none
 				&kp ESCAPE	&kp Q	&kp D	&kp R	&kp W	&kp B	&kp J	&kp F	&kp U	&kp P	&kp SEMICOLON	&lt 6 BACKSLASH
 				&kp CAPSLOCK	&mt LEFT_GUI A	&mt LEFT_ALT S	&mt LEFT_SHIFT H	&mt LEFT_CONTROL T	&kp G	&kp Y	&mt RIGHT_CONTROL N	&mt RIGHT_SHIFT E	&mt RIGHT_ALT O	&mt RIGHT_GUI I	&kp APOSTROPHE
-				&tog 5	&lt 2 Z	&lt 2 X	&lt 3 M	&lt 4 C	&lt 6 V	&lt 6 K	&lt 4 L	&lt 3 COMMA	&lt 2 PERIOD	&lt 2 SLASH	&lt 5 DELETE
-				&lt 3 ESCAPE	&lt 2 SPACE	&lt 5 TAB	&lt 3 ENTER	&lt 2 BACKSPACE
+				&tog 6	&lt 5 Z	&lt 2 X	&lt 3 M	&lt 4 C	&lt 7 V	&lt 7 K	&lt 4 L	&lt 3 COMMA	&lt 2 PERIOD	&lt 5 SLASH	&lt 6 DELETE
+				&lt 3 ESCAPE	&lt 2 SPACE	&lt 6 TAB	&lt 3 ENTER	&lt 2 BACKSPACE
 				&none	&none	&none
 			>;
 
@@ -219,7 +219,7 @@
 		|                                            |--------|--------||--------|             \--------/                              |
 		|------------------------------------------------------------------------------------------------------------------------------|
 		*/
-      Mouse {
+      btsettings {
 			bindings = <
             &none        &none         &none         &none         &none      &none             &none             &none      &none         &none         &none         &none
             &none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none      &bt BT_CLR        &bt BT_CLR        &none      &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &none
@@ -266,21 +266,21 @@
 		|                                            |--------|--------||--------|             \--------/                              |
 		|------------------------------------------------------------------------------------------------------------------------------|
 		*/
-      /*
-      nav {
+
+      navigation {
          label = "navigation";
          bindings = <
-            &trans  &trans  &trans           &trans          &trans           &trans            &trans          &trans          &trans        &trans           &trans      &trans
+            &none   &none   &none            &none           &none            &none             &none           &none           &none         &none            &none       &none
             &trans  &trans  &trans           &trans          &trans           &trans            &trans          &trans          &trans        &trans           &trans      &trans
             &trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_UP    &mmv MOVE_RIGHT  &msc SCRL_UP      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans      &trans
             &tog 5  &mo 6   &msc SCRL_LEFT   &mmv MOVE_DOWN  &msc SCRL_RIGHT  &msc SCRL_DOWN    &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp INSERT  &kp DELETE
                                              &mkp MB1        &mkp MB3         &mkp MB2          &trans          &trans
-                                                             &trans           &trans            &trans
+                                                             &none            &none             &none
          >;
 
          trackball-bindings = <&tsl>;//滚轮层
       };
-      */
+
 		/*
 		|------------------------------------------------------------------------------------------------------------------------------|
 		| LAYER 7 - Mouse - Mouse Button Scroll Movement                                                                               |
