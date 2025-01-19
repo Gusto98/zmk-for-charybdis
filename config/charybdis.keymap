@@ -219,7 +219,16 @@
 		|                                            |--------|--------||--------|             \--------/                              |
 		|------------------------------------------------------------------------------------------------------------------------------|
 		*/
-
+      Mouse {
+			bindings = <
+            &none        &none         &none         &none         &none      &none             &none             &none      &none         &none         &none         &none
+            &none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none      &bt BT_CLR        &bt BT_CLR        &none      &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &none
+            &none        &trans        &trans        &mkp MCLK     &trans     &bt BT_CLR_ALL    &bt BT_CLR_ALL    &trans     &mkp MCLK     &trans        &trans        &none
+            &bootloader  &trans        &mkp RCLK     &mo 4         &mkp LCLK  &mo 5             &mo 5             &mkp LCLK  &mo 4         &mkp RCLK     &trans        &bootloader
+										                       &mo 5         &mkp LCLK  &mkp RCLK         &mkp RCLK         &mkp LCLK
+														                         &none      &none             &none
+			>;
+		};
       /*
       // this layer broke the build
       bluetooth {
@@ -363,7 +372,7 @@
 														 &trans         &trans          &none
 			>;
 		};
-      */
+
 		Mouse {
 			bindings = <
             &none        &none         &none         &none         &none      &none         &none       &none      &none         &none         &none         &none
@@ -374,7 +383,7 @@
 														&none      &trans        &trans
 			>;
 		};
-      /*
+
 		layer_4 {
 			bindings = <
             &trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
