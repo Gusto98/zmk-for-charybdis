@@ -213,7 +213,7 @@
             &none   &none   &none            &none           &none            &none             &none           &none           &none         &none            &none       &none
             &trans  &trans  &trans           &trans          &trans           &trans            &trans          &trans          &trans        &trans           &trans      &trans
             &trans  &trans  &trans           &trans          &trans           &trans            &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans      &trans
-            &tog 6  &mo 5   &trans           &trans          &trans           &trans            &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp INSERT  &kp DELETE
+            &tog 5  &mo 6   &trans           &trans          &trans           &trans            &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp INSERT  &kp DELETE
                                              &mkp MB1        &mkp MB3         &mkp MB2          &mkp MB2          &mkp MB1
                                                              &none            &none             &none
          >;
