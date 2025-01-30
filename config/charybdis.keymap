@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/mouse.h>
 
 &lt {
-	tapping-term-ms = <200>;
+	tapping-term-ms = <180>;
 	flavor = "balanced";
 	quick-tap-ms = <150>;
 };
@@ -34,7 +34,7 @@
 		|        | LGUI   | LALT   | LSHFT  | LCTRL  |        |                  |        | RCTRL  | RSHFT  | RALT   | RGUI   |        |
 		|--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
 		|        | Z      | X      | M      | C      | V      |                  | K      | L      | , <    | . >    | / ?    | DELETE |
-		| TOG 5  | LT 7   | LT 2   | LT 3   | LT 4   | LT 7   |                  | LT 7   | LT 4   | LT 3   | LT 2   | LT 7   | LT 5   |
+		| TOG 5  | LT 6   | LT 2   | LT 3   | LT 4   | LT 7   |                  | LT 7   | LT 4   | LT 3   | LT 2   | LT 6   | LT 5   |
 		|-----------------------------------|--------|--------|--------||--------|--------|--------------------------------------------|
 		| ROW 4                             | ESCAPE | SPACE  | TAB    || ENTER  | BCKSPC |    /-------\   TRACKBALL PM3610            |
 		|                                   | LT 3   | LT 2   | LT 5   || LT 3   | LT 2   |	  / MOUSE   \                              |
@@ -47,7 +47,7 @@
 				&none				&none					&none					&none					&none						&none			&none				&none						&none						&none					&none	&none
 				&lt 9 ESCAPE	&kp Q					&kp D					&kp R					&kp W						&kp B			&kp J				&kp F						&kp U						&kp P					&kp SEMICOLON		&lt 9 BACKSLASH
 				&kp CAPSLOCK	&mt LEFT_GUI A		&mt LEFT_ALT S		&mt LEFT_SHIFT H	&mt LEFT_CONTROL T	&kp G			&kp Y				&mt RIGHT_CONTROL N	&mt RIGHT_SHIFT E		&mt RIGHT_ALT O	&mt RIGHT_GUI I	&kp APOSTROPHE
-				&tog 5			&lt 7 Z				&lt 2 X				&lt 3 M				&lt 4 C					&lt 7 V		&lt 7 K			&lt 4 L					&lt 3 COMMA				&lt 2 PERIOD		&lt 7 SLASH			&lt 5 DELETE
+				&tog 5			&lt 6 Z				&lt 2 X				&lt 3 M				&lt 4 C					&lt 7 V		&lt 7 K			&lt 4 L					&lt 3 COMMA				&lt 2 PERIOD		&lt 6 SLASH			&lt 5 DELETE
 																					&lt 3 ESCAPE		&lt 2 SPACE				&lt 5 TAB	&lt 3 ENTER		&lt 2 BACKSPACE
 																											&none						&none			&none
 			>;
@@ -111,9 +111,9 @@
 			label = "numbers";
 			bindings = <
 				&none		         &none             &none		         &none		         &none		         &none		         &none		         &none		         &none		         &none		         &none		         &none
-				&kp KP_NUMBER_0   &kp KP_NUMBER_1   &kp KP_NUMBER_2   &kp KP_NUMBER_3   &kp KP_NUMBER_4   &kp KP_NUMBER_5   &kp KP_NUMBER_6   &kp KP_NUMBER_7   &kp KP_NUMBER_8   &kp KP_NUMBER_9   &kp KP_NUMBER_0   &kp KP_EQUAL
-				&trans            &trans            &trans            &trans            &trans            &trans            &kp KP_DOT        &kp KP_NUMBER_4   &kp KP_NUMBER_5   &kp KP_NUMBER_6   &kp KP_MINUS      &kp KP_PLUS
-				&trans            &trans            &trans            &trans            &trans            &trans            &kp KP_NUMBER_0   &kp KP_NUMBER_1   &kp KP_NUMBER_2   &kp KP_NUMBER_3   &kp KP_DIVIDE     &kp KP_MULTIPLY
+				&kp NUMBER_0   &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3   &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6   &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9   &kp NUMBER_0   &kp EQUAL
+				&trans            &trans            &trans            &trans            &trans            &trans            &kp DOT        &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6   &kp KP_MINUS      &kp KP_PLUS
+				&trans            &trans            &trans            &trans            &trans            &trans            &kp NUMBER_0   &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3   &kp KP_DIVIDE     &kp KP_MULTIPLY
 																&trans            &trans            &trans            &trans            &trans
 																					   &none             &none             &none
 			>;
@@ -145,7 +145,7 @@
          bindings = <
             &none		  &none		      &none		     &none		&none		     &none		   &none		  &none		        &none		         &none		            &none		             &none
             &kp GRAVE  &kp EXCLAMATION &kp AT_SIGN   &kp HASH  &kp DOLLAR    &kp PERCENT  &kp CARET  &kp AMPERSAND     &kp ASTERISK       &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PIPE
-            &kp TILDE  &kp UNDERSCORE  &kp KP_MINUS  &kp PLUS  &kp KP_EQUAL  &trans       &trans     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp DOUBLE_QUOTES
+            &kp TILDE  &kp UNDERSCORE  &kp MINUS  &kp PLUS  &kp EQUAL  &trans       &trans     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp DOUBLE_QUOTES
             &trans     &trans          &trans        &trans    &trans        &trans       &trans     &kp APOSTROPHE    &kp DOUBLE_QUOTES  &kp LESS_THAN        &kp GREATER_THAN      &kp QUESTION
                                                      &trans    &trans        &trans       &trans     &trans
                                                                &none         &none        &none
@@ -217,9 +217,9 @@
                                              &mkp MB1        &mkp MB3         &mkp MB2          &mkp MB2          &mkp MB1
                                                              &none            &none             &none
          >;
-			//trackball-bindings = <&tmv_coarse>;
+			trackball-bindings = <&tmv_coarse>;
 			//trackball-bindings = <&tmv_fine>;//精准指针层
-         trackball-bindings = <&tsl>; //滚轮层
+         //trackball-bindings = <&tsl>; //滚轮层
       };
 
 		/*-----------------------------------------------------------------------------------------------------------------------------|
@@ -252,6 +252,7 @@
                                              	&mkp MB1    &mkp MB3       &mkp MB2          &mkp MB2          &mkp MB1
                                                             &none          &none             &none
 			>;
+         trackball-bindings = <&tsl>; //滚轮层
 		};
 
 		/*-----------------------------------------------------------------------------------------------------------------------------|
