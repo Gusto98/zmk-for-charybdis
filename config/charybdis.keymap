@@ -32,14 +32,14 @@
 			key-positions = <13 18 37 42>;
 			timeout-ms = <50>;
 			layers = <0>;
-		}
+		};
 
 		bootloader_right {
 			bindings = <&bootloader>;
 			key-positions = <19 24 43 48>;
 			timeout-ms = <50>;
 			layers = <0>;
-		}
+		};
 
 	};
 
