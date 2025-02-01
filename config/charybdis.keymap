@@ -133,12 +133,12 @@
 		numbers {
 			label = "numbers";
 			bindings = <
-				&none		         &none             &none		         &none		         &none		         &none		         &none		         &none		         &none		         &none		         &none		         &none
-				&kp NUMBER_0   &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3   &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6   &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9   &kp NUMBER_0   &kp EQUAL
-				&trans            &trans            &trans            &trans            &trans            &trans            &kp DOT        &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6   &kp KP_MINUS      &kp KP_PLUS
-				&trans            &trans            &trans            &trans            &trans            &trans            &kp NUMBER_0   &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3   &kp KP_DIVIDE     &kp KP_MULTIPLY
-																&trans            &trans            &trans            &trans            &trans
-																					   &none             &none             &none
+				&none			&none       &none		&none		&none		&none		&none		    &none		&none		&none		&none		    &none
+				&kp N0  		&kp N1   	&kp N2   	&kp N3   	&kp N4     	&kp N5   	&kp N6   		&kp N7   	&kp N8   	&kp N9   	&kp N0   		&kp KP_EQUAL
+				&LOCKING_NUM    &trans      &trans      &trans      &trans      &trans      &kp DOT        	&kp N4   	&kp N5   	&kp N6   	&kp KP_MINUS   	&kp KP_PLUS
+				&SCROLLLOCK     &trans      &trans      &trans      &trans      &trans      &kp N0 			&kp N1   	&kp N2   	&kp N3   	&kp KP_DIVIDE  	&kp KP_MULTIPLY
+														&trans      &trans      &trans      &trans			&trans
+																	&none       &none       &none
 			>;
 			trackball-bindings = <&tmv_coarse>;
 		};
@@ -166,12 +166,12 @@
       symbols {
          label = "symbols";
          bindings = <
-            &none		  &none		      &none		     &none		&none		     &none		   &none		  &none		        &none		         &none		            &none		             &none
-            &kp GRAVE  &kp EXCLAMATION &kp AT_SIGN   &kp HASH  &kp DOLLAR    &kp PERCENT  &kp CARET  &kp AMPERSAND     &kp ASTERISK       &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PIPE
-            &kp TILDE  &kp UNDERSCORE  &kp MINUS  &kp PLUS  &kp EQUAL  &trans       &trans     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp DOUBLE_QUOTES
-            &trans     &trans          &trans        &trans    &trans        &trans       &trans     &kp APOSTROPHE    &kp DOUBLE_QUOTES  &kp LESS_THAN        &kp GREATER_THAN      &kp QUESTION
-                                                     &trans    &trans        &trans       &trans     &trans
-                                                               &none         &none        &none
+            &none		&none		      	&none		    &none		&none		    &none		 &none		&none		      &none		         &none		          &none		            &none
+            &kp GRAVE  	&kp EXCLAMATION 	&kp AT_SIGN   	&kp HASH  	&kp DOLLAR    	&kp PERCENT  &kp CARET  &kp AMPERSAND     &kp ASTERISK       &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PIPE
+            &kp TILDE  	&kp UNDERSCORE  	&kp MINUS  		&kp PLUS  	&kp EQUAL  		&trans       &trans     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE       &kp RIGHT_BRACE       &trans
+            &trans     	&trans          	&trans        	&trans    	&trans        	&trans       &trans     &kp APOSTROPHE    &kp DOUBLE_QUOTES  &kp LESS_THAN        &kp GREATER_THAN      &trans
+                                                     		&trans    	&trans        	&trans       &trans 	&trans
+                                                               			&none         	&none        &none
          >;
 			trackball-bindings = <&tmv_coarse>;
       };
@@ -242,7 +242,7 @@
          >;
 			trackball-bindings = <&tmv_coarse>;
 			//trackball-bindings = <&tmv_fine>;//精准指针层
-         //trackball-bindings = <&tsl>; //滚轮层
+         	//trackball-bindings = <&tsl>; //滚轮层
       };
 
 		/*-----------------------------------------------------------------------------------------------------------------------------|
@@ -343,12 +343,12 @@
       settings {
 			label = "settings";
 			bindings = <
-            &none       &none			&none       &none       &none      		&none             &none             &none      		&none         &none        &none         &none
-            &none       &to 1       &to 0       &none       &none  			&bootloader			&bootloader       &none     		&none         &to 0			&to 1         &none
-            &none       &none			&none       &none       &none      		&none             &none             &none      		&none         &none        &none         &none
-            &none       &none			&none       &none       &none      		&none             &none             &none      		&none         &none        &none         &none
-                                             	&none			&none				&none					&none					&none
-														                  &none      		&none             &none
+            &none       &none		&none       &none       &none      		&none           &none           &none      		&none         &none        &none         &none
+            &none       &to 1       &to 0       &none       &none  			&bootloader		&bootloader     &none     		&none         &to 0		   &to 1         &none
+            &none       &none		&none       &none       &none      		&none           &none           &none      		&none         &none        &none         &none
+            &none       &none		&none       &none       &none      		&none           &none           &none      		&none         &none        &none         &none
+                                             	&none		&none			&none			&none			&none
+														                   	&none      		&none           &none
 			>;
 		};
 
