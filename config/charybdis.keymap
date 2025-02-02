@@ -13,34 +13,61 @@
 	combos {
 		compatible = "zmk,combos";
 
-		printscreen_left {
+		printscreen_left_3row {
 			bindings = <&kp PRINTSCREEN>;
-			key-positions = <15 16>;
-			layers = <2>; // comment out to make it a global combo
+			key-positions = <12 17>;
+			layers = <0 1 2>; // comment out to make it a global combo
 			timeout-ms = <50>;
 		};
 
-		printscreen_left {
+		printscreen_right_3row {
 			bindings = <&kp PRINTSCREEN>;
-			key-positions = <19 20>;
-			layers = <2>;
+			key-positions = <18 23>;
+			layers = <0 1 2>;
 			timeout-ms = <50>;
 		};
 
-		bootloader_left {
+		printscreen_left_4row {
+			bindings = <&kp PRINTSCREEN>;
+			key-positions = <24 29>;
+			layers = <0 1 2>; // comment out to make it a global combo
+			timeout-ms = <50>;
+		};
+
+		printscreen_right_4row {
+			bindings = <&kp PRINTSCREEN>;
+			key-positions = <30 35>;
+			layers = <0 1 2>;
+			timeout-ms = <50>;
+		};
+
+		bootloader_left_3row {
 			bindings = <&bootloader>;
-			key-positions = <13 18 37 42>;
+			key-positions = <0 5 19 24>;
 			timeout-ms = <50>;
 			layers = <0>;
 		};
 
-		bootloader_right {
+		bootloader_right_3row {
+			bindings = <&bootloader>;
+			key-positions = <6 11 25 30>;
+			timeout-ms = <50>;
+			layers = <0>;
+		};
+
+		bootloader_left_4row {
+			bindings = <&bootloader>;
+			key-positions = <l3 18 37 42>;
+			timeout-ms = <50>;
+			layers = <0>;
+		};
+
+		bootloader_right_4row {
 			bindings = <&bootloader>;
 			key-positions = <19 24 43 48>;
 			timeout-ms = <50>;
 			layers = <0>;
 		};
-
 	};
 
 	keymap {
@@ -242,7 +269,7 @@
          >;
 			trackball-bindings = <&tmv_coarse>;
 			//trackball-bindings = <&tmv_fine>;//精准指针层
-         	//trackball-bindings = <&tsl>; //滚轮层
+         //trackball-bindings = <&tsl>; //滚轮层
       };
 
 		/*-----------------------------------------------------------------------------------------------------------------------------|
