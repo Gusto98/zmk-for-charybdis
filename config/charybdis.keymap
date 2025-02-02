@@ -16,28 +16,28 @@
 		printscreen_left_3row {
 			bindings = <&kp PRINTSCREEN>;
 			key-positions = <12 17>;
-			layers = <0 1 2>; // comment out to make it a global combo
+			layers = <0>; // comment out to make it a global combo
 			timeout-ms = <50>;
 		};
 
 		printscreen_right_3row {
 			bindings = <&kp PRINTSCREEN>;
 			key-positions = <18 23>;
-			layers = <0 1 2>;
+			layers = <0>;
 			timeout-ms = <50>;
 		};
 
 		printscreen_left_4row {
 			bindings = <&kp PRINTSCREEN>;
 			key-positions = <24 29>;
-			layers = <0 1 2>; // comment out to make it a global combo
+			layers = <0>; // comment out to make it a global combo
 			timeout-ms = <50>;
 		};
 
 		printscreen_right_4row {
 			bindings = <&kp PRINTSCREEN>;
 			key-positions = <30 35>;
-			layers = <0 1 2>;
+			layers = <0>;
 			timeout-ms = <50>;
 		};
 
