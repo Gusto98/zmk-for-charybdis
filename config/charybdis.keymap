@@ -27,7 +27,7 @@
 			timeout-ms = <50>;
 		};
 
-		printscreen_left_4row {
+	/*		printscreen_left_4row {
 			bindings = <&kp PRINTSCREEN>;
 			key-positions = <24 29>;
 			layers = <0 1>; // comment out to make it a global combo
@@ -40,7 +40,7 @@
 			layers = <0 1>;
 			timeout-ms = <50>;
 		};
-
+	*/
 		bootloader_left_3row {
 			bindings = <&bootloader>;
 			key-positions = <0 5 19 24>;
@@ -55,7 +55,7 @@
 			layers = <0 1>;
 		};
 
-		bootloader_left_4row {
+	/*		bootloader_left_4row {
 			bindings = <&bootloader>;
 			key-positions = <l3 18 37 42>;
 			timeout-ms = <50>;
@@ -68,6 +68,7 @@
 			timeout-ms = <50>;
 			layers = <0 1>;
 		};
+	*/
 	};
 
 	keymap {
