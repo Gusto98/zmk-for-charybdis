@@ -16,28 +16,28 @@
 		printscreen_left_3row {
 			bindings = <&kp PRINTSCREEN>;
 			key-positions = <12 17>;
-			layers = <0>; // comment out to make it a global combo
+			layers = <0 1>; // comment out to make it a global combo
 			timeout-ms = <50>;
 		};
 
 		printscreen_right_3row {
 			bindings = <&kp PRINTSCREEN>;
 			key-positions = <18 23>;
-			layers = <0>;
+			layers = <0 1>;
 			timeout-ms = <50>;
 		};
 
 		printscreen_left_4row {
 			bindings = <&kp PRINTSCREEN>;
 			key-positions = <24 29>;
-			layers = <0>; // comment out to make it a global combo
+			layers = <0 1>; // comment out to make it a global combo
 			timeout-ms = <50>;
 		};
 
 		printscreen_right_4row {
 			bindings = <&kp PRINTSCREEN>;
 			key-positions = <30 35>;
-			layers = <0>;
+			layers = <0 1>;
 			timeout-ms = <50>;
 		};
 
@@ -45,28 +45,28 @@
 			bindings = <&bootloader>;
 			key-positions = <0 5 19 24>;
 			timeout-ms = <50>;
-			layers = <0>;
+			layers = <0 1>;
 		};
 
 		bootloader_right_3row {
 			bindings = <&bootloader>;
 			key-positions = <6 11 25 30>;
 			timeout-ms = <50>;
-			layers = <0>;
+			layers = <0 1>;
 		};
 
 		bootloader_left_4row {
 			bindings = <&bootloader>;
 			key-positions = <l3 18 37 42>;
 			timeout-ms = <50>;
-			layers = <0>;
+			layers = <0 1>;
 		};
 
 		bootloader_right_4row {
 			bindings = <&bootloader>;
 			key-positions = <19 24 43 48>;
 			timeout-ms = <50>;
-			layers = <0>;
+			layers = <0 1>;
 		};
 	};
 
@@ -87,18 +87,19 @@
 		| TOG 5  | LT 6   | LT 2   | LT 3   | LT 4   | LT 7   |                  | LT 7   | LT 4   | LT 3   | LT 2   | LT 6   | LT 5   |
 		|-----------------------------------|--------|--------|--------||--------|--------|--------------------------------------------|
 		| ROW 4                             | ESCAPE | SPACE  | TAB    || ENTER  | BCKSPC |    /-------\   TRACKBALL PM3610            |
-		|                                   | LT 3   | LT 2   | LT 5   || LT 3   | LT 2   |	  / MOUSE   \                              |
+		|                                   | LT 5   | LT 2   | LT 3   || LT 3   | LT 2   |	  / MOUSE   \                              |
 		| ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (  MOVEMENT )                             |
 		|                                            | x      | x      || x      |            \         /                              |
 		|                                            |-----------------||--------|             \-------/                               |
 		|-----------------------------------------------------------------------------------------------------------------------------*/
+		/* L0: base L1: QWERTY L2: Numbers L3: Symbols L4: FkeysMedia L5: Navigation L6: Mouse L7: Swap L8: BT Settings L9: Settings	*/
 		Base {
 			bindings = <
 				&none				&none					&none					&none					&none						&none			&none				&none						&none						&none					&none	&none
-				&lt 9 ESCAPE	&kp Q					&kp D					&kp R					&kp W						&kp B			&kp J				&kp F						&kp U						&kp P					&kp SEMICOLON		&lt 9 BACKSLASH
+				&lt 7 ESCAPE	&kp Q					&kp D					&kp R					&kp W						&kp B			&kp J				&kp F						&kp U						&kp P					&kp SEMICOLON		&lt 7 BACKSLASH
 				&kp CAPSLOCK	&mt LEFT_GUI A		&mt LEFT_ALT S		&mt LEFT_SHIFT H	&mt LEFT_CONTROL T	&kp G			&kp Y				&mt RIGHT_CONTROL N	&mt RIGHT_SHIFT E		&mt RIGHT_ALT O	&mt RIGHT_GUI I	&kp APOSTROPHE
 				&tog 5			&lt 6 Z				&lt 2 X				&lt 3 M				&lt 4 C					&lt 7 V		&lt 7 K			&lt 4 L					&lt 3 COMMA				&lt 2 PERIOD		&lt 6 SLASH			&lt 5 DELETE
-																					&lt 3 ESCAPE		&lt 2 SPACE				&lt 5 TAB	&lt 3 ENTER		&lt 2 BACKSPACE
+																					&lt 5 ESCAPE		&lt 2 SPACE				&lt 3 TAB	&lt 3 ENTER		&lt 2 BACKSPACE
 																											&none						&none			&none
 			>;
 			trackball-bindings = <&tmv_coarse>;
@@ -128,9 +129,9 @@
 			label = "qwerty overlay";
 			bindings = <
 				&none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none
-				&lt 9 ESCAPE  &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &lt 9 BACKSLASH
+				&lt 7 ESCAPE  &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &lt 7 BACKSLASH
 				&lt 2 CAPSLOCK &mt LEFT_GUI A &mt LEFT_ALT S &mt LEFT_SHIFT D  &mt LEFT_CONTROL F   &kp G &kp H &mt RIGHT_CONTROL J  &mt RIGHT_SHIFT K &mt RIGHT_ALT L   &mt RIGHT_GUI SEMICOLON &kp APOSTROPHE
-				&tog 5   &lt 7 Z  &lt 2 X  &lt 3 C  &lt 4 V  &lt 7 B  &lt 7 N  &lt 4 M  &lt 3 COMMA &lt 2 PERIOD   &lt 7 SLASH &lt 5 DELETE
+				&tog 5   &lt 6 Z  &lt 2 X  &lt 3 C  &lt 4 V  &lt 7 B  &lt 7 N  &lt 4 M  &lt 3 COMMA &lt 2 PERIOD   &lt 6 SLASH &lt 5 DELETE
 				&lt 3 ESCAPE   &lt 2 SPACE &lt 5 TAB   &lt 3 ENTER &lt 2 BACKSPACE
 				&none &none &none
 			>;
@@ -295,18 +296,50 @@
       mouse {
 			label = "mouse layer 2";
 			bindings = <
-            &none       &none			&none       &none       &none      		&none             &none             &none      		&none         &none        &none         &none
-            &none       &none			&none       &none       &none      		&none             &none             &none      		&none         &none        &none         &none
-            &none       &none			&none       &none       &none      		&none             &none             &none      		&none         &none        &none         &none
-            &none       &none			&none       &none       &none      		&none             &none             &none      		&none         &none        &none         &none
-                                             	&mkp MB1    &mkp MB3       &mkp MB2          &mkp MB2          &mkp MB1
-                                                            &none          &none             &none
-			>;
+            &none   &none   &none       		&none           &none            &none             &none           &none           &none         &none            &none       &none
+            &trans  &trans  &trans           &trans          &trans           &trans            &trans          &trans          &trans        &trans           &trans      &trans
+            &trans  &trans  &trans           &trans          &trans           &trans            &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans      &trans
+            &tog 5  &trans  &trans           &trans          &trans           &trans            &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp INSERT  &kp DELETE
+                                             &mkp MB1        &mkp MB3         &mkp MB2          &mkp MB2          &mkp MB1
+                                                             &none            &none             &none
+         >;
          trackball-bindings = <&tsl>; //滚轮层
 		};
 
 		/*-----------------------------------------------------------------------------------------------------------------------------|
-		| LAYER 7 - BLUETOOTH settings                                                                                                 |
+		| LAYER 7 - Swap layer                                                                                                         |
+		|-----------------------------------------------------| ROW 0            |-----------------------------------------------------|
+		| x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
+		|--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
+		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
+		|        | MO 8   | MO 9   |        |        |        |                  |        |        |        | MO 9   | MO 8   |        |
+		|--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
+		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
+		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
+		|--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
+		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
+		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
+		|-----------------------------------|--------|--------|--------||--------|--------|--------------------------------------------|
+		| ROW 4                             |        |        |        ||        |        |	   /--------\   TRACKBALL PM3610           |
+		|                                   |        |        |        ||        |        |	  /          \                             |
+		| ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (            )                            |
+		|                                            | x      | x      || x      |            \          /                             |
+		|                                            |--------|--------||--------|             \--------/                              |
+		|-----------------------------------------------------------------------------------------------------------------------------*/
+      swap{
+         label = "swap";
+         bindings = <
+            &none			&none   		&none			&none			&none			&none			&none			&none			&none			&none			&none			&none
+            &none			&mo 8   		&mo 9 		&none			&none			&none			&none			&none			&none			&mo 9     	&mo 8 		&none
+            &none			&none   		&none			&none			&none			&none			&none			&none			&none			&none			&none			&none
+            &none			&none   		&none			&none			&none			&none			&none			&none			&none			&none			&none			&none
+                                             	&none			&none			&none			&none			&none
+                                                            &none       &none       &none
+         >;
+      };
+
+		/*-----------------------------------------------------------------------------------------------------------------------------|
+		| LAYER 8 - BLUETOOTH settings                                                                                                 |
 		|-----------------------------------------------------| ROW 0            |-----------------------------------------------------|
 		| x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
 		|--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
@@ -328,12 +361,12 @@
       btsettings {
 			label = "bluetooth settings";
 			bindings = <
-            &none        &none         &none         &none         &none      &none             &none             &none      &none         &none         &none         &none
-            &bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none      &bt BT_CLR        &bt BT_CLR        &none      &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bootloader
-            &none        &bootloader   &none         &mkp MCLK     &bt BT_PRV &bt BT_NXT        &bt BT_NXT        &bt BT_PRV &mkp MCLK     &none         &bootloader   &none
-            &none  		 &none         &mkp RCLK     &mo 4         &mkp LCLK  &mo 5             &mo 5             &mkp LCLK  &mo 4         &mkp RCLK     &none         &none
-										                       &mkp LCLK     &mkp MCLK  &mkp RCLK         &mkp RCLK         &mkp LCLK
-														                         &none      &none             &none
+            &none        &none         &none         &none         &none      	&none             &none             &none      		&none         	&none         	&none          &none
+            &none  		 &none      	&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2 	&bt BT_SEL 3 		&bt BT_SEL 3      &bt BT_SEL 2  	&bt BT_SEL 1  	&bt BT_SEL 0 	&none      		&none
+            &none        &bootloader   &none         &bt BT_PRV 	 &bt BT_NXT		&bt BT_CLR        &bt BT_CLR        &bt BT_NXT     &bt BT_PRV     &none         	&bootloader    &none
+            &none  		 &none         &none     	  &none     	 &none 	 		&none         		&none             &none 			&none         	&none     		&none          &none
+										                       &none			 &none    		&none       		&none        		&none
+														                         &none      	&none             &none
 			>;
       	/* this layer broke the build
       	bindings = <
@@ -348,12 +381,12 @@
 
 		// Maybe I can use a combo to get to layer 8 for one keypress
 		/*-----------------------------------------------------------------------------------------------------------------------------|
-		| LAYER 8 - Settings - Reste KB & toggle base overlay                                                                          |
+		| LAYER 9 - Settings - Reste KB & toggle base overlay                                                                          |
 		|-----------------------------------------------------| ROW 0            |-----------------------------------------------------|
 		| x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
 		|--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |      |SYSRESET|BOOTLOADER|                  |BOOTLOADER|SYSRESET|      |        |        |        |
-		|        | TO 1   | TO 0   |        |        |        |                  |        |        |        | TO 0   | TO 1   |        |
+		|        |        |        |        |	    |BOOTLOADER|                  |BOOTLOADER|      |        |        |        |        |
+		|        |        |        | TO 1   | TO 0   |        |                  |        | TO 0   | TO 1   |        |        |        |
 		|--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
 		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
 		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
@@ -371,45 +404,13 @@
 			label = "settings";
 			bindings = <
             &none       &none		&none       &none       &none      		&none          &none          &none      	&none         &none        &none         &none
-            &none       &to 1    &to 0       &none       &none  			&bootloader		&bootloader    &none     	&none         &to 0		   &to 1         &none
+            &none       &none    &none       &to 1       &to 0  			&bootloader		&bootloader   	&to 0		   &to 1         &none     	&none 		  &none
             &none       &none		&none       &none       &none      		&none          &none          &none      	&none         &none        &none         &none
             &none       &none		&none       &none       &none      		&none          &none          &none      	&none         &none        &none         &none
                                              &none			&none				&none				&none				&none
 														               &none      		&none          &none
 			>;
 		};
-
-		/*-----------------------------------------------------------------------------------------------------------------------------|
-		| LAYER 9 - Swap layer                                                                                                         |
-		|-----------------------------------------------------| ROW 0            |-----------------------------------------------------|
-		| x      | x      | x      | x      | x      | x      |  NOT IN SCOPE    | x      | x      | x      | x      | x      | x      |
-		|--------|--------|--------|--------|--------|--------| ROW 1            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        | MO 8   | MO 7   |        |        |        |                  |        |        |        | MO 7   | MO 8   |        |
-		|--------|--------|--------|--------|--------|--------| ROW 2            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|        |        |        |        |        |        |                  |        |        |        |        |        |        |
-		|-----------------------------------|--------|--------|--------||--------|--------|--------------------------------------------|
-		| ROW 4                             |        |        |        ||        |        |	   /--------\   TRACKBALL PM3610           |
-		|                                   |        |        |        ||        |        |	  /          \                             |
-		| ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (            )                            |
-		|                                            | x      | x      || x      |            \          /                             |
-		|                                            |--------|--------||--------|             \--------/                              |
-		|-----------------------------------------------------------------------------------------------------------------------------*/
-      swap{
-         label = "swap";
-         bindings = <
-            &none			&none   		&none			&none			&none			&none			&none			&none			&none			&none			&none			&none
-            &none			&mo 8   		&mo 7 		&none			&none			&none			&none			&none			&none			&mo 7     	&mo 8 		&none
-            &none			&none   		&none			&none			&none			&none			&none			&none			&none			&none			&none			&none
-            &none			&none   		&none			&none			&none			&none			&none			&none			&none			&none			&none			&none
-                                             	&none			&none			&none			&none			&none
-                                                            &none       &none       &none
-         >;
-      };
 
       /*
 		layer_1 {
