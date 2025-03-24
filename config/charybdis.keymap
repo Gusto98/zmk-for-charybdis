@@ -362,12 +362,12 @@
       btsettings {
 			label = "bluetooth settings";
 			bindings = <
-            &none        &none         &none         &none         &none      	&none             &none             &none      		&none         	&none         	&none          &none
-            &none  		 &none      	&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2 	&bt BT_SEL 3 		&bt BT_SEL 3      &bt BT_SEL 2  	&bt BT_SEL 1  	&bt BT_SEL 0 	&none      		&none
-            &none        &bootloader   &none         &bt BT_PRV 	 &bt BT_NXT		&bt BT_CLR        &bt BT_CLR        &bt BT_NXT     &bt BT_PRV     &none         	&bootloader    &none
-            &none  		 &none         &none     	  &none     	 &none 	 		&none         		&none             &none 			&none         	&none     		&none          &none
-										                       &none			 &none    		&none       		&none        		&none
-														                         &none      	&none             &none
+            &none       &none			&none       	&none       	&none      		&none          		&none          	  	&none      			&none         	&none       		&none         	&none
+            &none 		&none         	&none         	&none         	&bt BT_CLR ALL	&bootloader         &bootloader       	&bt BT_CLR ALL    	&bt BT_CLR  	&none         		&none          	&none
+            &none 		&bt BT_SEL 0  	&bt BT_SEL 1  	&bt BT_SEL 2 	&bt BT_SEL 3 	&bt BT_SEL 4       	&bt BT_SEL 0  	  	&bt BT_SEL 1  		&bt BT_SEL 2 	&bt BT_SEL 3		&bt BT_SEL 4	&none
+            &none  		&bt BT_DISC 0  	&bt BT_DISC 1  	&bt BT_DISC 2 	&bt BT_DISC 3 	&bt BT_DISC 4		&bt BT_DISC 0     	&bt BT_DISC 1  		&bt BT_DISC 2  	&bt BT_DISC 3 		&bt BT_DISC 4   &none
+										                       &none	&bt BT_PRV    	&bt BT_NXT       	&bt BT_PRV        	&bt BT_NXT
+														                &none      		&none       		&none
 			>;
       	/* this layer broke the build
       	bindings = <
@@ -404,12 +404,12 @@
       settings {
 			label = "settings";
 			bindings = <
-            &none       &none		&none       &none       &none      		&none          &none          &none      	&none         &none        &none         &none
-            &none       &none    &none       &to 1       &to 0  			&bootloader		&bootloader   	&to 0		   &to 1         &none     	&none 		  &none
-            &none       &none		&none       &none       &none      		&none          &none          &none      	&none         &none        &none         &none
-            &none       &none		&none       &none       &none      		&none          &none          &none      	&none         &none        &none         &none
-                                             &none			&none				&none				&none				&none
-														               &none      		&none          &none
+            &none       &none		&none       &none       &none      		&none          	&none          	&none      	&none         &none        	&none         &none
+            &none       &none    	&none       &to 1       &to 0  			&bootloader		&bootloader   	&to 0		&to 1         &none     	&none 		  &none
+            &none       &none		&none       &none       &none      		&none          	&none          	&none      	&none         &none        	&none         &none
+            &none       &none		&none       &none       &none      		&none          	&none          	&none      	&none         &none        	&none         &none
+                                             	&none		&none			&none			&none			&none
+														               		&none      		&none          	&none
 			>;
 		};
 
