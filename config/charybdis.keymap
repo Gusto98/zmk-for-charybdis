@@ -405,21 +405,12 @@
       settings {
 			label = "settings";
 			bindings = <
-<<<<<<< Updated upstream
             &none       &none		&none       &none       &none      		&none          	&none          	&none      	&none         &none        	&none         &none
             &none       &none    	&none       &to 1       &to 0  			&bootloader		&bootloader   	&to 0		&to 1         &none     	&none 		  &none
             &none       &none		&none       &none       &none      		&none          	&none          	&none      	&none         &none        	&none         &none
             &none       &none		&none       &none       &none      		&none          	&none          	&none      	&none         &none        	&none         &none
                                              	&none		&none			&none			&none			&none
 														               		&none      		&none          	&none
-=======
-            &none       &none		&none       &none       &none      		&none          &none          &none      	&none         &none        	&none         &none
-            &none       &none    	&none       &to 1       &to 0  			&bootloader		&bootloader   &to 0		   	&to 1         &none     	&none 		  &none
-            &none       &none		&none       &none       &none      		&none          &none          &none      	&none         &none       	&none         &none
-            &none       &none		&none       &none       &none      		&none          &none          &none      	&none         &none        	&none         &none
-                                             &none			&none				&none				&none				&none
-														               &none      		&none          &none
->>>>>>> Stashed changes
 			>;
 		};
 
