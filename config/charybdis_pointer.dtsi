@@ -1,0 +1,18 @@
+/* config/charybdis_pointer.dtsi */
+&pointers {
+    compatible = "zmk,pointer-behavior-trackball";
+
+    /* On power-up / reset, pointer starts at 3200 DPI */
+    default-dpi = <3200>;
+
+    /* Cycle through these levels when scrolling through DPI */
+    dpi-config = <800 1600 3200 4800 6400>;
+
+    /* When holding sniping key, speed is reduced to 1600 */
+    sniping-dpi = <1600>;
+
+    /* Step size index isn't used since cycle behavior overrides it, but setting to 1 is safe default */
+    dpi-config-step = <1>;
+
+    acceleration = <1>;
+};

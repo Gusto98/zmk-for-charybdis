@@ -5,6 +5,7 @@
  */
 
 #include "charybdis.dtsi"
+#include "../charybdis_pointer.dtsi"
 
 &kscan0 {
 	col-gpios

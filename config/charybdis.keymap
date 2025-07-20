@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
+#include "../charybdis_pointer.dtsi"
 
 &lt {
 	tapping-term-ms = <180>;
@@ -262,10 +263,10 @@
       navigation {
          label = "navigation";
          bindings = <
-            &none   &none   &none            &none           &none            &none             &none           &none           &none         &none            &none       &none
-            &trans  &trans  &trans           &trans          &trans           &trans            &trans          &trans          &trans        &trans           &trans      &trans
-            &trans  &trans  &trans           &trans          &trans           &trans            &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans      &trans
-            &tog 5  &mo 6   &trans           &trans          &trans           &trans            &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp INSERT  &kp DELETE
+            &none   &none   &none            &none           &none            &none             &none           &none           &none         &none            &none       	&none
+            &trans  &trans  &trans           &trans          &trans           &trans           	&trans          &trans          &trans        &trans           &trans      	&dpi_increase
+            &trans  &trans  &trans           &trans          &trans           &dpi_increase 	&kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &dpi_sniping &dpi_decrease
+            &tog 5  &mo 6   &trans           &trans          &dpi_sniping     &dpi_decrease     &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp INSERT  	&kp DELETE
                                              &mkp MB1        &mkp MB3         &mkp MB2          &mkp MB2          &mkp MB1
                                                              &none            &none             &none
          >;
