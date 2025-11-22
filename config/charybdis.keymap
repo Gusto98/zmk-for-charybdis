@@ -5,7 +5,7 @@
 
 &lt {
 	tapping-term-ms = <180>;
-	flavor = "balanced";
+	flavor = "tap-preferred"; //flavor = "balanced";
 	quick-tap-ms = <150>;
 };
 
@@ -85,13 +85,14 @@
 		|        | LGUI   | LALT   | LSHFT  | LCTRL  |        |                  |        | RCTRL  | RSHFT  | RALT   | RGUI   |        |
 		|--------|--------|--------|--------|--------|--------| ROW 3            |--------|--------|--------|--------|--------|--------|
 		|        | Z      | X      | M      | C      | V      |                  | K      | L      | , <    | . >    | / ?    | DELETE |
-		| TOG 5  | LT 6   | LT 2   | LT 3   | LT 4   | LT 7   |                  | LT 7   | LT 4   | LT 3   | LT 2   | LT 6   | LT 5   |
+		| TOG 5  | LT 5   | LT 6   | LT 3   | LT 4   | LT 7   |                  | LT 7   | LT 4   | LT 3   | LT 6   | LT 5   | LT 2   |
 		|-----------------------------------|--------|--------|--------||--------|--------|--------------------------------------------|
 		| ROW 4                             | ESCAPE | SPACE  | TAB    || ENTER  | BCKSPC |    /-------\   TRACKBALL PM3610            |
-		|                                   | LT 5   | LT 2   | LT 3   || LT 3   | LT 2   |	  / MOUSE   \                              |
+		|                                   | LT 3   | LT 2   | LT 5   || LT 3   | LT 2   |	  / MOUSE   \                              |
 		| ROW 5 - NOT IN SCOPE              |--------|--------|--------||--------|--------|	 (  MOVEMENT )                             |
-		|                                            | x      | x      || x      |            \         /                              |
-		|                                            |-----------------||--------|             \-------/                               |
+		|                                            | SPACE  | TOG 5  || LALT   |            \         /                              |
+		|                                            | LT 2   |        || LT 3   |             \-------/                               |
+		|                                            |--------|--------||--------|                                                     |
 		|-----------------------------------------------------------------------------------------------------------------------------*/
 		/* L0: base L1: QWERTY L2: Numbers L3: Symbols L4: FkeysMedia L5: Navigation L6: Mouse L7: Swap L8: BT Settings L9: Settings	*/
 		Base {
@@ -99,9 +100,9 @@
 				&kp F1          &kp F2           	&kp F3            	&kp F4      		&kp F5      		&kp F6          &kp F7   	&kp F8   &kp F9   &kp F10  &kp F11                 &kp F12
 				&lt 7 ESCAPE	&kp Q				&kp D				&kp R				&kp W				&kp B			&kp J		&kp F						&kp U						&kp P					&kp SEMICOLON		&lt 7 BACKSLASH
 				&kp CAPSLOCK	&mt LEFT_GUI A		&mt LEFT_ALT S		&mt LEFT_SHIFT H	&mt LEFT_CONTROL T	&kp G			&kp Y		&mt RIGHT_CONTROL N	&mt RIGHT_SHIFT E		&mt RIGHT_ALT O	&mt RIGHT_GUI I	&kp APOSTROPHE
-				&tog 5			&lt 6 Z				&lt 2 X				&lt 3 M				&lt 4 C					&lt 7 V		&lt 7 K		&lt 4 L					&lt 3 COMMA				&lt 2 PERIOD		&lt 6 SLASH			&lt 5 DELETE
+				&tog 5			&lt 5 Z				&lt 6 X				&lt 3 M				&lt 4 C					&lt 7 V		&lt 7 K		&lt 4 L					&lt 3 COMMA				&lt 6 PERIOD		&lt 5 SLASH			&lt 2 DELETE
 																					&lt 3 ESCAPE		&lt 2 SPACE				&lt 5 TAB	&lt 5 ENTER		&lt 2 BACKSPACE
-																										&lt 2 SPACE				&lt 3 UNDERSCORE	&lt 3 LALT
+																										&lt 2 SPACE				&tog 5		&lt 3 LALT
 			>;
 			trackball-bindings = <&tmv_coarse>;
 		};
