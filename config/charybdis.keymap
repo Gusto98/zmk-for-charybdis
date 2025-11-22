@@ -5,8 +5,15 @@
 
 &lt {
 	tapping-term-ms = <150>;
-	flavor = "tap-preferred"; //flavor = "balanced";
 	quick-tap-ms = <120>;
+	/* tap-preferred flavor: decision made when tapping term expires. (Trying this now with a reduced tapping term of 150ms and quick tap 120ms, 180ms 150ms was too slow for my typing speed).
+	* balanced flavor: decision made when interrupting key is released. (Tried this with tapping term 180ms & quick tap 150ms, found that it slows my typing because in order to register consecutive taps I have to wait for the tapping term to expire)
+	* hold-preferred flavor: decision made when interrupting key is pressed. (Not my desired behaviour)
+	* https://zmk.dev/assets/images/comparison-90bcec61f679e88a74490eb261d92940.svg
+	*/
+	//flavor = "hold-preferred";
+	flavor = "balanced";
+	//flavor = "tap-preferred";
 };
 
 / {
